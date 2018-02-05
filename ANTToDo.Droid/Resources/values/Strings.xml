@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">ANTToDo.Droid</string>
+  <string name="ViewActivities">View Activities</string>
+  <string name="CreateActivities">Create Activities</string>
+  <string name="TitleActivities">Activities Title</string>
+  <string name="DescriptionActivities">Activities Description</string>
+  <string name="DeleteButton">Delete</string>
+  <string name="SaveButton">Save</string>
+</resources>

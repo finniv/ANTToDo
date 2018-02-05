@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <EditText
+        android:layout_alignParentBottom="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        local:MvxBind="Text DetailTitle"
+        android:minWidth="200dp" />
+    <EditText
+        android:layout_alignParentBottom="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        local:MvxBind="Text DetailDescription"
+        android:minWidth="200dp" />
+    <CheckBox
+        android:text="Status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Checked ActivitiesStatusDetail" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="190.0dp"
+            android:layout_height="80dp"
+            android:text="@string/DeleteButton"
+            android:textSize="10dp"
+            local:MvxBind="Click DeleteActivities"
+            android:layout_alignParentStart="true"
+            android:layout_marginRight="2.0dp" />
+        <Button
+            android:layout_width="190.0dp"
+            android:layout_height="80dp"
+            android:text="@string/SaveButton"
+            android:textSize="10dp"
+            local:MvxBind="Click UpdateActivities"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="2.0dp" />
+    </LinearLayout>
+</LinearLayout>
