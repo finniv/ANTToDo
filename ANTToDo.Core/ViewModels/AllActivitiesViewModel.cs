@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ using MvvmCross.Platform;
 
 namespace ANTToDo.Core.ViewModels
 {
-    public class AllActivitiesViewModel: MvxViewModel
+    public class AllActivitiesViewModel: MvxViewModel,IMotionViewModel
     {
         public List<Activities> AllActivitieses { get; set; }
 
@@ -22,6 +23,15 @@ namespace ANTToDo.Core.ViewModels
                 return new MvxCommand(() => Close(this));
             }
         }
+
+
+        private string _addButtonText;
+        public string AddButtonText
+        {
+            get { return _addButtonText; }
+            set { _addButtonText = "ADD"; }
+        }
+
 
 
         public ICommand NavigateToDetailCommand
@@ -35,13 +45,19 @@ namespace ANTToDo.Core.ViewModels
             }
         }
 
+        public ICommand AddActivities
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<DetailViewModel>(new Activities()));
+            }
+        }
 
         public void Init()
         {
             try
             {
                 Task<List<Activities>> result = Mvx.Resolve<Repository>().GetAllActivities();
-                result.Wait();
                 AllActivitieses = result.Result;
             }
             catch (Exception e)
@@ -49,7 +65,13 @@ namespace ANTToDo.Core.ViewModels
                 Debug.WriteLine(e);
                 throw;
             }
-            
+
+        }
+
+        public void OnSwipe(bool swipeRight)
+        {
+            Task<List<Activities>> result = Mvx.Resolve<Repository>().GetAllActivities();
+            AllActivitieses = result.Result;
         }
     }
 }

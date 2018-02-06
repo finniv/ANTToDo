@@ -8,7 +8,8 @@ namespace ANTToDo.Core.ViewModels
     internal class DetailViewModel:MvxViewModel
     {
         private Activities _activities;
-
+        private bool _activitiesIsEmpty;
+        
         private string _detailTitle;
         public string DetailTitle
         {
@@ -27,37 +28,27 @@ namespace ANTToDo.Core.ViewModels
         private bool _activitiesStatusDetail;
         public bool ActivitiesStatusDetail
         {
-            get
-            {
-                if (_activities.ActivitiesStatus==0)
-                {
-                    return false;
-                }
-
-                if (_activities.ActivitiesStatus == 1)
-                {
-                    return true;
-                }
-
-                return false;
-            }
+            get => _activities.ActivitiesStatus;
             set
             {
-                if (value)
-                {
-                    _activities.ActivitiesStatus=1;
-                }
-
-                if (value==false)
-                {
-                    _activities.ActivitiesStatus = 0;
-                }
-               
+                _activities.ActivitiesStatus = value;
                 RaisePropertyChanged("ActivitiesStatusDetail");
             }
         }
 
+        private bool _editableCheckBox;
+        public bool EditableCheckBox
+        {
+            get { return _editableCheckBox; }
+            set { _editableCheckBox = value; RaisePropertyChanged("EditableCheckBox"); }
+        }
 
+        private bool _editableField;
+        public bool EditableField
+        {
+            get { return _editableField; }
+            set { _editableField = value; RaisePropertyChanged("EditableField"); }
+        }
 
 
 
@@ -66,9 +57,12 @@ namespace ANTToDo.Core.ViewModels
             get
             {
                 return new MvxCommand(() => {
-
-                    Mvx.Resolve<Repository>().DeleteActivities(_activities).Wait();
+                    if(_activities!=null)
+                    {
+                        Mvx.Resolve<Repository>().DeleteActivities(_activities).Wait();
+                    }
                     Close(this);
+                    ShowViewModel<AllActivitiesViewModel>();
                 });
             }
         }
@@ -77,10 +71,21 @@ namespace ANTToDo.Core.ViewModels
         {
             get
             {
-                return new MvxCommand(() => {
+                return new MvxCommand(async () => {
+                    if (!_activitiesIsEmpty)
+                    {
+                        await Mvx.Resolve<Repository>().UpdateActivities(_activities);
+                        
+                    }
 
-                    Mvx.Resolve<Repository>().UpdateActivities(_activities).Wait();
+                    if (_activitiesIsEmpty)
+                    {
+                        await Mvx.Resolve<Repository>().CreateActivities(_activities);
+                        
+                        
+                    }
                     Close(this);
+                    ShowViewModel<AllActivitiesViewModel>();
                 });
             }
         }
@@ -88,6 +93,18 @@ namespace ANTToDo.Core.ViewModels
         public void Init(Activities activities)
         {
             _activities = activities;
+            if (_activities.Id==0)
+            {
+                _activitiesIsEmpty = true;
+            }
+
+            if (_activities.Id!=0)
+            {
+                _activitiesIsEmpty = false;
+            }
+
+            EditableField = _activitiesIsEmpty;
+            EditableCheckBox = !_activitiesIsEmpty;
         }
     }
 }

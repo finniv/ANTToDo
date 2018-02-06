@@ -174,6 +174,9 @@ namespace ANTToDo.Droid
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f070007
+			public const int AddButton = 2131165191;
+			
 			// aapt resource value: 0x7f070002
 			public const int CreateActivities = 2131165186;
 			

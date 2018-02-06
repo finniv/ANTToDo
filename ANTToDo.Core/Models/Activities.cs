@@ -16,7 +16,7 @@ namespace ANTToDo.Core.Models
         public string ActivitiesDescription { get; set; }
 
         [NotNull]
-        public int ActivitiesStatus { get; set; }
+        public bool ActivitiesStatus { get; set; }
 
         public bool IsValid()
         {

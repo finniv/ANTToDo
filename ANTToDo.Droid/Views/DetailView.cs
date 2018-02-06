@@ -18,7 +18,6 @@ namespace ANTToDo.Droid.Views
     {
         protected override void OnViewModelSet()
         {
-
             SetContentView(Resource.Layout.View_Detail);
         }
     }

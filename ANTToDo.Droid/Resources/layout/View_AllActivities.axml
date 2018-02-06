@@ -6,7 +6,20 @@
     android:layout_height="match_parent">
     <Mvx.MvxListView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         local:MvxBind="ItemsSource AllActivitieses; ItemClick NavigateToDetailCommand"
         local:MvxItemTemplate="@layout/listitem_activities" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:text="@string/AddButton"
+            android:textSize="10dp"
+            local:MvxBind="Click AddActivities; TitleLabel AddButtonText"
+            android:layout_alignParentRight="true" />
+    </LinearLayout>
 </LinearLayout>

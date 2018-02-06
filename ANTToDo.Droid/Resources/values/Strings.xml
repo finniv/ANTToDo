@@ -7,4 +7,5 @@
   <string name="DescriptionActivities">Activities Description</string>
   <string name="DeleteButton">Delete</string>
   <string name="SaveButton">Save</string>
+  <string name="AddButton">Add</string>
 </resources>
