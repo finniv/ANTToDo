@@ -112,7 +112,6 @@
     <Compile Include="Views\ActivitiesView.cs" />
     <Compile Include="Views\AllActivitiesView.cs" />
     <Compile Include="Views\DetailView.cs" />
-    <Compile Include="Views\MainMenuView.cs" />
     <Compile Include="Views\SplashScreenView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -121,9 +120,6 @@
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\View_SplashScreen.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\View_MainMenu.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\View_Activities.axml">
