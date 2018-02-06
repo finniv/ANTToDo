@@ -30,7 +30,7 @@ namespace ANTToDo.Core.ViewModels
             {
                 return new MvxCommand<Activities>(item =>
                 {
-                    ShowViewModel<DetailViewModel>(new Activities {Id=item.Id,ActivitiesTitle = item.ActivitiesTitle,ActivitiesDescription =item.ActivitiesDescription,ActivitiesStatus = item.ActivitiesStatus});
+                    ShowViewModel<DetailViewModel>(item);
                 });
             }
         }

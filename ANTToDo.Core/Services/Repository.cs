@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using ANTToDo.Core.Interfaces;
+using ANTToDo.Core.Models;
 using SQLite;
 
-namespace ANTToDo.Core.Models
+namespace ANTToDo.Core.Services
 {
     public class Repository : IRepository
     {
         private readonly SQLiteAsyncConnection conn;
-        
+
+
         public Repository(string dbPath)
         {
             conn = new SQLiteAsyncConnection(dbPath);
@@ -23,12 +26,11 @@ namespace ANTToDo.Core.Models
                 if (string.IsNullOrWhiteSpace(activities.ActivitiesTitle))
                     throw new Exception("Activities Title is required");
 
-                await conn.InsertAsync(activities).ConfigureAwait(continueOnCapturedContext: false);
-                
+                 await conn.InsertAsync(activities).ConfigureAwait(continueOnCapturedContext: false);
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex);
+               Debug.WriteLine(ex);
             }
         }
 
@@ -40,7 +42,6 @@ namespace ANTToDo.Core.Models
                     throw new Exception("Activities Title is required");
 
                 await conn.UpdateAsync(activities).ConfigureAwait(continueOnCapturedContext: false);
-               
             }
             catch (Exception ex)
             {

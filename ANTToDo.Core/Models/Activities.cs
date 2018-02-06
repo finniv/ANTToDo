@@ -18,21 +18,6 @@ namespace ANTToDo.Core.Models
         [NotNull]
         public int ActivitiesStatus { get; set; }
 
-        public Activities()
-        {
-            ActivitiesTitle = string.Empty;
-            ActivitiesDescription=string.Empty;
-            ActivitiesStatus = 0;
-        }
-
-        public Activities(int id , string title,string description,int status)
-        {
-            Id = id;
-            ActivitiesTitle = title;
-            ActivitiesDescription = description;
-            ActivitiesStatus = status;
-        }
-
         public bool IsValid()
         {
             return (!String.IsNullOrWhiteSpace(ActivitiesTitle));
