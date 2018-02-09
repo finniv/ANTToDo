@@ -16,22 +16,7 @@ namespace ANTToDo.Core.Models
         public string ActivitiesDescription { get; set; }
 
         [NotNull]
-        public int ActivitiesStatus { get; set; }
-
-        public Activities()
-        {
-            ActivitiesTitle = string.Empty;
-            ActivitiesDescription=string.Empty;
-            ActivitiesStatus = 0;
-        }
-
-        public Activities(int id , string title,string description,int status)
-        {
-            Id = id;
-            ActivitiesTitle = title;
-            ActivitiesDescription = description;
-            ActivitiesStatus = status;
-        }
+        public bool ActivitiesStatus { get; set; }
 
         public bool IsValid()
         {
@@ -39,3 +24,4 @@ namespace ANTToDo.Core.Models
         }
     }
 }
+

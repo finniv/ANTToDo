@@ -1,55 +1,103 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using ANTToDo.Core.Models;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 
 namespace ANTToDo.Core.ViewModels
 {
-    public class AllActivitiesViewModel: MvxViewModel
+    public class AllActivitiesViewModel : MvxViewModel
     {
-        public List<Activities> AllActivitieses { get; set; }
-
-        public ICommand NavBack
+        private List<Activities> _allaActivitiesBind;
+        public List<Activities> AllActivitiesBind
         {
-            get
+            get { return _allaActivitiesBind; }
+            set
             {
-                return new MvxCommand(() => Close(this));
+                _allaActivitiesBind = value;
+                RaisePropertyChanged("AllActivitiesBind");
             }
         }
 
 
-        public ICommand NavigateToDetailCommand
+        public IMvxNavigationService _navigationService;
+        public AllActivitiesViewModel(IMvxNavigationService navigation)
+        {
+            _navigationService = navigation;
+        }
+
+        private string _addButtonText;
+        public string AddButtonText
+        {
+            get { return _addButtonText; }
+            set { _addButtonText = "ADD"; }
+        }
+
+
+        public ICommand NavigateToDetailCommand =>
+            new MvxCommand<Activities>(item => _navigationService.Navigate<DetailViewModel , Activities>(item));
+
+
+        public ICommand AddActivities => new MvxCommand(() => _navigationService.Navigate<DetailViewModel>());
+
+        public ICommand RefreshOnSwipe
         {
             get
             {
-                return new MvxCommand<Activities>(item =>
+                return new MvxCommand(() => AllActivitiesBind = new List<Activities>
                 {
-                    ShowViewModel<DetailViewModel>(new Activities {Id=item.Id,ActivitiesTitle = item.ActivitiesTitle,ActivitiesDescription =item.ActivitiesDescription,ActivitiesStatus = item.ActivitiesStatus});
+                    new Activities {ActivitiesTitle = "test"},
+                    new Activities {ActivitiesTitle = "tesst"}
                 });
             }
         }
 
+        private bool _isRefreshing;
+        public virtual bool IsRefreshing
+        {
+            get { return _isRefreshing; }
+            set
+            {
+                _isRefreshing = value;
+                RaisePropertyChanged(() => IsRefreshing);
+            }
+        }
+
+        public ICommand ReloadCommand
+        {
+            get
+            {
+                return new MvxCommand(() =>
+                {
+                    IsRefreshing = true;
+
+                    LoadRefreshTestData();
+
+                    IsRefreshing = false;
+                });
+            }
+        }
+
+        private void LoadRefreshTestData()
+        {
+            AllActivitiesBind = new List<Activities>
+            {
+                new Activities {ActivitiesTitle = "test"},
+                new Activities {ActivitiesTitle = "tesst"}
+            };
+        }
+
+        private void ReloadData()
+        {
+            Task<List<Activities>> result = Mvx.Resolve<Repository>().GetAllActivities();
+            AllActivitiesBind = result.Result;
+        }
 
         public void Init()
         {
-            try
-            {
-                Task<List<Activities>> result = Mvx.Resolve<Repository>().GetAllActivities();
-                result.Wait();
-                AllActivitieses = result.Result;
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-                throw;
-            }
-            
+            ReloadData();
         }
     }
 }

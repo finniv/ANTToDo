@@ -1,25 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using MvvmCross.Droid.Views;
+using Android.Support.V7.Widget;
+using ANTToDo.Core.ViewModels;
+using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace ANTToDo.Droid.Views
 {
     [Activity(Label = "Detail View" , NoHistory = true)]
-    public class DetailView : MvxActivity
+    public class DetailView : MvxAppCompatActivity<DetailViewModel>
     {
-        protected override void OnViewModelSet()
+        protected override void OnCreate(Bundle bundle)
         {
+            base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.View_Detail);
+
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+
+            SetSupportActionBar(toolbar);
+
+            var actionBar = SupportActionBar;
+            if (actionBar != null)
+            {
+                actionBar.SetDisplayHomeAsUpEnabled(true);
+            }
         }
     }
 }

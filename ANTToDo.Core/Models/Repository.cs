@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using SQLite;
 
@@ -8,8 +9,6 @@ namespace ANTToDo.Core.Models
     public class Repository : IRepository
     {
         private readonly SQLiteAsyncConnection conn;
-
-        public string StatusMessage { get; set; }
 
         public Repository(string dbPath)
         {
@@ -24,12 +23,12 @@ namespace ANTToDo.Core.Models
                 if (string.IsNullOrWhiteSpace(activities.ActivitiesTitle))
                     throw new Exception("Activities Title is required");
 
-                var result = await conn.InsertAsync(activities).ConfigureAwait(continueOnCapturedContext: false);
-                StatusMessage = $"{result} record(s) added [Activities title: {activities.ActivitiesTitle})";
+                await conn.InsertAsync(activities).ConfigureAwait(continueOnCapturedContext: false);
+
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Failed to create {activities.ActivitiesTitle}'s activities. Error: {ex.Message}";
+                Debug.WriteLine(ex);
             }
         }
 
@@ -40,12 +39,12 @@ namespace ANTToDo.Core.Models
                 if (string.IsNullOrWhiteSpace(activities.ActivitiesTitle))
                     throw new Exception("Activities Title is required");
 
-                var result = await conn.UpdateAsync(activities).ConfigureAwait(continueOnCapturedContext: false);
-                StatusMessage = $"{result} record(s) updated [Activities title: {activities.ActivitiesTitle})";
+                await conn.UpdateAsync(activities).ConfigureAwait(continueOnCapturedContext: false);
+
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Failed to create {activities.ActivitiesTitle}'s activities. Error: {ex.Message}";
+                Debug.WriteLine(ex);
             }
         }
         public async Task DeleteActivities(Activities activities)
@@ -55,12 +54,11 @@ namespace ANTToDo.Core.Models
                 if (string.IsNullOrWhiteSpace(activities.ActivitiesTitle))
                     throw new Exception("Activities Title is required");
 
-                var result = await conn.DeleteAsync(activities).ConfigureAwait(continueOnCapturedContext: false);
-                StatusMessage = $"{result} record(s) deleted [Activities title: {activities.ActivitiesTitle})";
+                await conn.DeleteAsync(activities).ConfigureAwait(continueOnCapturedContext: false);
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Failed to create {activities.ActivitiesTitle}'s activities. Error: {ex.Message}";
+                Debug.WriteLine(ex);
             }
         }
 
