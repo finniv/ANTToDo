@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:local="http://schemas.android.com/apk/res-auto"
-  android:id="@+id/refresher"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  local:layout_behavior="@string/appbar_scrolling_view_behavior"
-  local:MvxBind="Refreshing IsRefreshing; RefreshCommand ReloadCommand">
-  <android.support.design.widget.CoordinatorLayout
+<MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refresher"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="horizontal">
-    <include
-      layout="@layout/toolbar" />
-    <LinearLayout
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:paddingTop="100dp">
-      <Mvx.MvxListView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        local:MvxBind="ItemsSource AllActivitiesBind; ItemClick NavigateToDetailCommand"
-        local:MvxItemTemplate="@layout/listitem_activities" />
-    </LinearLayout>
-  </android.support.design.widget.CoordinatorLayout>
+    local:layout_behavior="@string/appbar_scrolling_view_behavior"
+    local:MvxBind="Refreshing IsRefreshing; RefreshCommand ReloadCommand">
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="horizontal">
+        <include
+            layout="@layout/toolbar" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="100dp">
+            <Mvx.MvxListView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                local:MvxBind="ItemsSource AllActivitiesBind; ItemClick NavigateToDetailCommand"
+                local:MvxItemTemplate="@layout/listitem_activities" />
+        </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
 </MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout>

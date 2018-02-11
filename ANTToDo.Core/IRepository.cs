@@ -6,8 +6,9 @@ namespace ANTToDo.Core
 {
     public interface IRepository
     {
-        string StatusMessage { get; set; }
         Task CreateActivities(Activities activities);
+        Task DeleteActivities(Activities activities);
         Task<List<Activities>> GetAllActivities();
+        Task UpdateActivities(Activities activities);
     }
 }

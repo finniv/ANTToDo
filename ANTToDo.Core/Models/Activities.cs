@@ -17,6 +17,8 @@ namespace ANTToDo.Core.Models
 
         [NotNull]
         public bool ActivitiesStatus { get; set; }
+        
+        public string ImgPath { get; set; }
 
         public bool IsValid()
         {

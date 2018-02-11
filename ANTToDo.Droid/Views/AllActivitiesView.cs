@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Support.V7.Widget;
@@ -9,7 +10,7 @@ using static Android.Resource.Color;
 
 namespace ANTToDo.Droid.Views
 {
-    [Activity(Label = "View Activities" , NoHistory = true)]
+    [Activity(Label = "View Activities", NoHistory = false)]
     public class AllActivitiesView : MvxAppCompatActivity<AllActivitiesViewModel>
     {
         private SwipeRefreshLayout swipe;
@@ -20,8 +21,8 @@ namespace ANTToDo.Droid.Views
 
             SetContentView(Resource.Layout.View_AllActivities);
             swipe = FindViewById<SwipeRefreshLayout>(Resource.Id.refresher);
-            swipe.SetColorScheme(HoloBlueBright , HoloBlueDark ,
-                HoloGreenLight , HoloRedLight);
+            swipe.SetColorScheme(HoloBlueBright, HoloBlueDark,
+                HoloGreenLight, HoloRedLight);
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
 

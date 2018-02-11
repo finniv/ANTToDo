@@ -1,12 +1,13 @@
 ﻿using System.Windows.Input;
 using ANTToDo.Core.Models;
+using ANTToDo.Core.Services;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 
 namespace ANTToDo.Core.ViewModels
 {
-    public class DetailViewModel : MvxViewModel<Activities>
+    public class DetailViewModel : MvxViewModel<Activities,Status>
     {
         private Activities _activities;
         public IMvxNavigationService _navigationService;
@@ -24,10 +25,16 @@ namespace ANTToDo.Core.ViewModels
                 RaisePropertyChanged("DetailTitle");
             }
         }
+        
+        public  string DetailImgUrl
+        {
+            get { return _activities.ImgPath;}
+            set { _activities.ImgPath = ImgPathHolder.ImgPathString; RaisePropertyChanged("DetailImgUrl"); }
+        }
+
 
 
         private string _detailDescription;
-
         public string DetailDescription
         {
             get { return _activities.ActivitiesDescription; }
@@ -39,7 +46,6 @@ namespace ANTToDo.Core.ViewModels
         }
 
         private bool _activitiesStatusDetail;
-
         public bool ActivitiesStatusDetail
         {
             get { return _activities.ActivitiesStatus; }
@@ -54,7 +60,6 @@ namespace ANTToDo.Core.ViewModels
 
 
         private bool _editableField;
-
         public bool EditableField
         {
             get { return _editableField; }
@@ -66,10 +71,12 @@ namespace ANTToDo.Core.ViewModels
         }
 
         private bool _editableCheckBox;
-
         public bool EditableCheckBox
         {
-            get { return _editableCheckBox; }
+            get
+            {
+                return _editableCheckBox;
+            }
             set
             {
                 _editableCheckBox = value;
@@ -82,10 +89,10 @@ namespace ANTToDo.Core.ViewModels
         {
             get
             {
-                return new MvxCommand(() =>
+                return new MvxCommand( () =>
                 {
-                    Mvx.Resolve<Repository>().DeleteActivities(_activities).Wait();
-                    _navigationService.Close(this);
+                     Mvx.Resolve<Repository>().DeleteActivities(_activities);
+                    _navigationService.Close(this , Status.Update);
                 });
             }
         }
@@ -94,8 +101,9 @@ namespace ANTToDo.Core.ViewModels
         {
             get
             {
-                return new MvxCommand(() =>
+                return new MvxCommand( () =>
                 {
+                    _activities.ImgPath = ImgPathHolder.ImgPathString;
                     if (!isNewActivities)
                     {
                         Mvx.Resolve<Repository>().UpdateActivities(_activities);
@@ -105,12 +113,18 @@ namespace ANTToDo.Core.ViewModels
                         Mvx.Resolve<Repository>().CreateActivities(_activities);
                     }
 
-                    _navigationService.Close(this);
+                    ImgPathHolder.ImgPathString = null;
+                    _navigationService.Close(this,Status.Update);
                 });
             }
         }
 
         public void Init(Activities activities)
+        {
+            ActivitiesChecker(activities);
+        }
+
+        private void ActivitiesChecker(Activities activities)
         {
             _activities = activities;
             if (_activities.Id == 0)
@@ -128,7 +142,7 @@ namespace ANTToDo.Core.ViewModels
 
         public override void Prepare(Activities activities)
         {
-            _activities = activities;
+            ActivitiesChecker(activities);
         }
     }
 }

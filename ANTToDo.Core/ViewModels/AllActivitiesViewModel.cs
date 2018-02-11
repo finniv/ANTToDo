@@ -5,23 +5,23 @@ using ANTToDo.Core.Models;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using MvvmCross.Plugins.Messenger;
 
 namespace ANTToDo.Core.ViewModels
 {
     public class AllActivitiesViewModel : MvxViewModel
     {
-        private List<Activities> _allaActivitiesBind;
+        private List<Activities> _allActivitiesBind;
         public List<Activities> AllActivitiesBind
         {
-            get { return _allaActivitiesBind; }
+            get { return _allActivitiesBind; }
             set
             {
-                _allaActivitiesBind = value;
+                _allActivitiesBind = value;
                 RaisePropertyChanged("AllActivitiesBind");
             }
         }
-
-
+       
         public IMvxNavigationService _navigationService;
         public AllActivitiesViewModel(IMvxNavigationService navigation)
         {
@@ -37,10 +37,16 @@ namespace ANTToDo.Core.ViewModels
 
 
         public ICommand NavigateToDetailCommand =>
-            new MvxCommand<Activities>(item => _navigationService.Navigate<DetailViewModel , Activities>(item));
+            new MvxCommand<Activities>(Execute);
 
-
-        public ICommand AddActivities => new MvxCommand(() => _navigationService.Navigate<DetailViewModel>());
+        private async void Execute(Activities item)
+        {
+          var res= await _navigationService.Navigate<DetailViewModel, Activities,Status>(item);
+            if (res == Status.Update)
+            {
+                ReloadData();
+            }
+        }
 
         public ICommand RefreshOnSwipe
         {
@@ -80,6 +86,27 @@ namespace ANTToDo.Core.ViewModels
             }
         }
 
+
+        MvxCommand _addActivitiesCommand;
+        public ICommand AddActivitiesCommand
+        {
+            get
+            {
+                _addActivitiesCommand = _addActivitiesCommand ?? new MvxCommand(DoAddActivitiesCommand);
+                return _addActivitiesCommand;
+            }
+        }
+
+        private async void DoAddActivitiesCommand()
+        {
+           var res= await _navigationService.Navigate<DetailViewModel,Status>();
+            if (res==Status.Update)
+            {
+                ReloadData();
+            }
+        }
+        
+
         private void LoadRefreshTestData()
         {
             AllActivitiesBind = new List<Activities>
@@ -99,5 +126,6 @@ namespace ANTToDo.Core.ViewModels
         {
             ReloadData();
         }
+        
     }
 }
