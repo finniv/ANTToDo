@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using ANTToDo.Core.Interfaces;
 using ANTToDo.Core.Models;
 using SQLite;
 
-namespace ANTToDo.Core
+namespace ANTToDo.Core.Data
 {
     public class Repository : IRepository
     {

@@ -1,4 +1,5 @@
 ﻿using System.Windows.Input;
+using ANTToDo.Core.Data;
 using ANTToDo.Core.Models;
 using ANTToDo.Core.Services;
 using MvvmCross.Core.Navigation;
@@ -29,18 +30,17 @@ namespace ANTToDo.Core.ViewModels
         public  string DetailImgUrl
         {
             get { return _activities.ImgPath;}
-            set { _activities.ImgPath = ImgPathHolder.ImgPathString; RaisePropertyChanged("DetailImgUrl"); }
+            set { _activities.ImgPath = ImgPathHolder.Current; RaisePropertyChanged("DetailImgUrl"); }
         }
-
-
-
-        private string _detailDescription;
+        
+        
+        private string _detailDescription = new ImgPathHolder().ImgPathString;
         public string DetailDescription
         {
             get { return _activities.ActivitiesDescription; }
             set
             {
-                _activities.ActivitiesDescription = value;
+                _activities.ActivitiesDescription = _detailDescription;
                 RaisePropertyChanged("DetailDescription");
             }
         }
@@ -103,7 +103,7 @@ namespace ANTToDo.Core.ViewModels
             {
                 return new MvxCommand( () =>
                 {
-                    _activities.ImgPath = ImgPathHolder.ImgPathString;
+                    _activities.ImgPath = ImgPathHolder.Current;
                     if (!isNewActivities)
                     {
                         Mvx.Resolve<Repository>().UpdateActivities(_activities);
@@ -113,7 +113,7 @@ namespace ANTToDo.Core.ViewModels
                         Mvx.Resolve<Repository>().CreateActivities(_activities);
                     }
 
-                    ImgPathHolder.ImgPathString = null;
+                    ImgPathHolder.Current = null;
                     _navigationService.Close(this,Status.Update);
                 });
             }

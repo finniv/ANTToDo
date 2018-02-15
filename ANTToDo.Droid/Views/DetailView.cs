@@ -53,8 +53,8 @@ namespace ANTToDo.Droid.Views
             {
                 Android.Net.Uri uri = data.Data;
                 imgPath.ImageUrl = uri.Path;
-                ImgPathHolder.ImgPathString = GetRealPathFromURI(uri);
-
+                ImgPathHolder.Current = GetRealPathFromURI(uri);
+                
             }
         }
 

@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using ANTToDo.Core.Models;
 
-namespace ANTToDo.Core
+namespace ANTToDo.Core.Interfaces
 {
     public interface IRepository
     {
