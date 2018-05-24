@@ -43,7 +43,9 @@
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Services\ImgPathHolder.cs" />
     <Compile Include="ViewModels\AllActivitiesViewModel.cs" />
+    <Compile Include="ViewModels\CalendarPageViewModel.cs" />
     <Compile Include="ViewModels\DetailViewModel.cs" />
+    <Compile Include="ViewModels\StartUpPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Binding, Version=5.6.3.0, Culture=neutral, processorArchitecture=MSIL">

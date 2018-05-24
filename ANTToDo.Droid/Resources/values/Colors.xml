@@ -7,4 +7,11 @@
   <color name="colorPrimaryDark">#303F9F</color>
   <color name="colorAccent">#FF4081</color>
   <color name="textViewColor">#EEEEEE</color>
+  <color name="dark">#000000</color>
+  <color name="toolbar_color">#ffffff</color>
+  <color name="red_main_color">#B00020</color>
+  <color name="background_main_color">#f5b6da</color>
+  
+
+
 </resources>

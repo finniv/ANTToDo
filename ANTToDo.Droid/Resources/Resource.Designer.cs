@@ -3054,44 +3054,44 @@ namespace ANTToDo.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0c004e
-			public const int abc_background_cache_hint_selector_material_dark = 2131492942;
-			
-			// aapt resource value: 0x7f0c004f
-			public const int abc_background_cache_hint_selector_material_light = 2131492943;
-			
-			// aapt resource value: 0x7f0c0050
-			public const int abc_btn_colored_borderless_text_material = 2131492944;
-			
-			// aapt resource value: 0x7f0c0051
-			public const int abc_btn_colored_text_material = 2131492945;
-			
 			// aapt resource value: 0x7f0c0052
-			public const int abc_color_highlight_material = 2131492946;
+			public const int abc_background_cache_hint_selector_material_dark = 2131492946;
 			
 			// aapt resource value: 0x7f0c0053
-			public const int abc_hint_foreground_material_dark = 2131492947;
+			public const int abc_background_cache_hint_selector_material_light = 2131492947;
 			
 			// aapt resource value: 0x7f0c0054
-			public const int abc_hint_foreground_material_light = 2131492948;
+			public const int abc_btn_colored_borderless_text_material = 2131492948;
+			
+			// aapt resource value: 0x7f0c0055
+			public const int abc_btn_colored_text_material = 2131492949;
+			
+			// aapt resource value: 0x7f0c0056
+			public const int abc_color_highlight_material = 2131492950;
+			
+			// aapt resource value: 0x7f0c0057
+			public const int abc_hint_foreground_material_dark = 2131492951;
+			
+			// aapt resource value: 0x7f0c0058
+			public const int abc_hint_foreground_material_light = 2131492952;
 			
 			// aapt resource value: 0x7f0c0000
 			public const int abc_input_method_navigation_guard = 2131492864;
 			
-			// aapt resource value: 0x7f0c0055
-			public const int abc_primary_text_disable_only_material_dark = 2131492949;
-			
-			// aapt resource value: 0x7f0c0056
-			public const int abc_primary_text_disable_only_material_light = 2131492950;
-			
-			// aapt resource value: 0x7f0c0057
-			public const int abc_primary_text_material_dark = 2131492951;
-			
-			// aapt resource value: 0x7f0c0058
-			public const int abc_primary_text_material_light = 2131492952;
-			
 			// aapt resource value: 0x7f0c0059
-			public const int abc_search_url_text = 2131492953;
+			public const int abc_primary_text_disable_only_material_dark = 2131492953;
+			
+			// aapt resource value: 0x7f0c005a
+			public const int abc_primary_text_disable_only_material_light = 2131492954;
+			
+			// aapt resource value: 0x7f0c005b
+			public const int abc_primary_text_material_dark = 2131492955;
+			
+			// aapt resource value: 0x7f0c005c
+			public const int abc_primary_text_material_light = 2131492956;
+			
+			// aapt resource value: 0x7f0c005d
+			public const int abc_search_url_text = 2131492957;
 			
 			// aapt resource value: 0x7f0c0001
 			public const int abc_search_url_text_normal = 2131492865;
@@ -3102,29 +3102,29 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f0c0003
 			public const int abc_search_url_text_selected = 2131492867;
 			
-			// aapt resource value: 0x7f0c005a
-			public const int abc_secondary_text_material_dark = 2131492954;
-			
-			// aapt resource value: 0x7f0c005b
-			public const int abc_secondary_text_material_light = 2131492955;
-			
-			// aapt resource value: 0x7f0c005c
-			public const int abc_tint_btn_checkable = 2131492956;
-			
-			// aapt resource value: 0x7f0c005d
-			public const int abc_tint_default = 2131492957;
-			
 			// aapt resource value: 0x7f0c005e
-			public const int abc_tint_edittext = 2131492958;
+			public const int abc_secondary_text_material_dark = 2131492958;
 			
 			// aapt resource value: 0x7f0c005f
-			public const int abc_tint_seek_thumb = 2131492959;
+			public const int abc_secondary_text_material_light = 2131492959;
 			
 			// aapt resource value: 0x7f0c0060
-			public const int abc_tint_spinner = 2131492960;
+			public const int abc_tint_btn_checkable = 2131492960;
 			
 			// aapt resource value: 0x7f0c0061
-			public const int abc_tint_switch_track = 2131492961;
+			public const int abc_tint_default = 2131492961;
+			
+			// aapt resource value: 0x7f0c0062
+			public const int abc_tint_edittext = 2131492962;
+			
+			// aapt resource value: 0x7f0c0063
+			public const int abc_tint_seek_thumb = 2131492963;
+			
+			// aapt resource value: 0x7f0c0064
+			public const int abc_tint_spinner = 2131492964;
+			
+			// aapt resource value: 0x7f0c0065
+			public const int abc_tint_switch_track = 2131492965;
 			
 			// aapt resource value: 0x7f0c0049
 			public const int accent = 2131492937;
@@ -3140,6 +3140,9 @@ namespace ANTToDo.Droid
 			
 			// aapt resource value: 0x7f0c0007
 			public const int background_floating_material_light = 2131492871;
+			
+			// aapt resource value: 0x7f0c0051
+			public const int background_main_color = 2131492945;
 			
 			// aapt resource value: 0x7f0c0008
 			public const int background_material_dark = 2131492872;
@@ -3180,11 +3183,14 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f0c004b
 			public const int colorPrimaryDark = 2131492939;
 			
+			// aapt resource value: 0x7f0c004e
+			public const int dark = 2131492942;
+			
 			// aapt resource value: 0x7f0c003c
 			public const int design_bottom_navigation_shadow_color = 2131492924;
 			
-			// aapt resource value: 0x7f0c0062
-			public const int design_error = 2131492962;
+			// aapt resource value: 0x7f0c0066
+			public const int design_error = 2131492966;
 			
 			// aapt resource value: 0x7f0c003d
 			public const int design_fab_shadow_end_color = 2131492925;
@@ -3210,8 +3216,8 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f0c0044
 			public const int design_snackbar_background_color = 2131492932;
 			
-			// aapt resource value: 0x7f0c0063
-			public const int design_tint_password_toggle = 2131492963;
+			// aapt resource value: 0x7f0c0067
+			public const int design_tint_password_toggle = 2131492967;
 			
 			// aapt resource value: 0x7f0c0012
 			public const int dim_foreground_disabled_material_dark = 2131492882;
@@ -3315,6 +3321,9 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f0c002e
 			public const int primary_text_disabled_material_light = 2131492910;
 			
+			// aapt resource value: 0x7f0c0050
+			public const int red_main_color = 2131492944;
+			
 			// aapt resource value: 0x7f0c002f
 			public const int ripple_material_dark = 2131492911;
 			
@@ -3339,11 +3348,11 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f0c0036
 			public const int switch_thumb_disabled_material_light = 2131492918;
 			
-			// aapt resource value: 0x7f0c0064
-			public const int switch_thumb_material_dark = 2131492964;
+			// aapt resource value: 0x7f0c0068
+			public const int switch_thumb_material_dark = 2131492968;
 			
-			// aapt resource value: 0x7f0c0065
-			public const int switch_thumb_material_light = 2131492965;
+			// aapt resource value: 0x7f0c0069
+			public const int switch_thumb_material_light = 2131492969;
 			
 			// aapt resource value: 0x7f0c0037
 			public const int switch_thumb_normal_material_dark = 2131492919;
@@ -3353,6 +3362,9 @@ namespace ANTToDo.Droid
 			
 			// aapt resource value: 0x7f0c004d
 			public const int textViewColor = 2131492941;
+			
+			// aapt resource value: 0x7f0c004f
+			public const int toolbar_color = 2131492943;
 			
 			// aapt resource value: 0x7f0c0039
 			public const int tooltip_background_dark = 2131492921;
@@ -4103,26 +4115,26 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f02006d
-			public const int avd_hide_password_1 = 2130837613;
-			
 			// aapt resource value: 0x7f02006e
-			public const int avd_hide_password_2 = 2130837614;
+			public const int avd_hide_password_1 = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int avd_hide_password_3 = 2130837615;
+			public const int avd_hide_password_2 = 2130837615;
+			
+			// aapt resource value: 0x7f020070
+			public const int avd_hide_password_3 = 2130837616;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f020070
-			public const int avd_show_password_1 = 2130837616;
-			
 			// aapt resource value: 0x7f020071
-			public const int avd_show_password_2 = 2130837617;
+			public const int avd_show_password_1 = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int avd_show_password_3 = 2130837618;
+			public const int avd_show_password_2 = 2130837618;
+			
+			// aapt resource value: 0x7f020073
+			public const int avd_show_password_3 = 2130837619;
 			
 			// aapt resource value: 0x7f020055
 			public const int DefaultActivities = 2130837589;
@@ -4146,55 +4158,58 @@ namespace ANTToDo.Droid
 			public const int design_snackbar_background = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int icon = 2130837596;
+			public const int ic_ab_back_material_dark = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int navigation_empty_icon = 2130837597;
+			public const int icon = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int notification_action_background = 2130837598;
+			public const int navigation_empty_icon = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int notification_bg = 2130837599;
+			public const int notification_action_background = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int notification_bg_low = 2130837600;
+			public const int notification_bg = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int notification_bg_low_normal = 2130837601;
+			public const int notification_bg_low = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int notification_bg_low_pressed = 2130837602;
+			public const int notification_bg_low_normal = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int notification_bg_normal = 2130837603;
+			public const int notification_bg_low_pressed = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int notification_bg_normal_pressed = 2130837604;
+			public const int notification_bg_normal = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int notification_icon_background = 2130837605;
-			
-			// aapt resource value: 0x7f02006b
-			public const int notification_template_icon_bg = 2130837611;
-			
-			// aapt resource value: 0x7f02006c
-			public const int notification_template_icon_low_bg = 2130837612;
+			public const int notification_bg_normal_pressed = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int notification_tile_bg = 2130837606;
+			public const int notification_icon_background = 2130837606;
+			
+			// aapt resource value: 0x7f02006c
+			public const int notification_template_icon_bg = 2130837612;
+			
+			// aapt resource value: 0x7f02006d
+			public const int notification_template_icon_low_bg = 2130837613;
 			
 			// aapt resource value: 0x7f020067
-			public const int notify_panel_notification_icon_bg = 2130837607;
+			public const int notification_tile_bg = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int splash = 2130837608;
+			public const int notify_panel_notification_icon_bg = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int tooltip_frame_dark = 2130837609;
+			public const int splash = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int tooltip_frame_light = 2130837610;
+			public const int tooltip_frame_dark = 2130837610;
+			
+			// aapt resource value: 0x7f02006b
+			public const int tooltip_frame_light = 2130837611;
 			
 			static Drawable()
 			{
@@ -4215,8 +4230,8 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f080034
 			public const int CTRL = 2131230772;
 			
-			// aapt resource value: 0x7f0800b1
-			public const int DetailImgView = 2131230897;
+			// aapt resource value: 0x7f0800b8
+			public const int DetailImgView = 2131230904;
 			
 			// aapt resource value: 0x7f080035
 			public const int FUNCTION = 2131230773;
@@ -4308,14 +4323,14 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f080039
 			public const int always = 2131230777;
 			
-			// aapt resource value: 0x7f0800ad
-			public const int appbar = 2131230893;
-			
 			// aapt resource value: 0x7f080057
 			public const int async = 2131230807;
 			
 			// aapt resource value: 0x7f080045
 			public const int auto = 2131230789;
+			
+			// aapt resource value: 0x7f0800b3
+			public const int backbutton = 2131230899;
 			
 			// aapt resource value: 0x7f080030
 			public const int beginning = 2131230768;
@@ -4328,6 +4343,9 @@ namespace ANTToDo.Droid
 			
 			// aapt resource value: 0x7f080064
 			public const int buttonPanel = 2131230820;
+			
+			// aapt resource value: 0x7f0800b0
+			public const int calendarActivities = 2131230896;
 			
 			// aapt resource value: 0x7f08009e
 			public const int cancel_action = 2131230878;
@@ -4358,6 +4376,9 @@ namespace ANTToDo.Droid
 			
 			// aapt resource value: 0x7f08008e
 			public const int container = 2131230862;
+			
+			// aapt resource value: 0x7f0800ad
+			public const int content = 2131230893;
 			
 			// aapt resource value: 0x7f080067
 			public const int contentPanel = 2131230823;
@@ -4391,6 +4412,9 @@ namespace ANTToDo.Droid
 			
 			// aapt resource value: 0x7f080095
 			public const int design_navigation_view = 2131230869;
+			
+			// aapt resource value: 0x7f0800af
+			public const int detailActivities = 2131230895;
 			
 			// aapt resource value: 0x7f080021
 			public const int disableHome = 2131230753;
@@ -4482,14 +4506,17 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f080062
 			public const int list_item = 2131230818;
 			
-			// aapt resource value: 0x7f0800b3
-			public const int masked = 2131230899;
+			// aapt resource value: 0x7f0800b2
+			public const int ll_toolbar = 2131230898;
+			
+			// aapt resource value: 0x7f0800ba
+			public const int masked = 2131230906;
 			
 			// aapt resource value: 0x7f0800a0
 			public const int media_actions = 2131230880;
 			
-			// aapt resource value: 0x7f0800af
-			public const int message = 2131230895;
+			// aapt resource value: 0x7f0800b6
+			public const int message = 2131230902;
 			
 			// aapt resource value: 0x7f080032
 			public const int middle = 2131230770;
@@ -4533,6 +4560,9 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f08004e
 			public const int pin = 2131230798;
 			
+			// aapt resource value: 0x7f0800b4
+			public const int plustButton = 2131230900;
+			
 			// aapt resource value: 0x7f080006
 			public const int progress_circular = 2131230726;
 			
@@ -4542,8 +4572,11 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f080076
 			public const int radio = 2131230838;
 			
-			// aapt resource value: 0x7f0800b0
-			public const int refresher = 2131230896;
+			// aapt resource value: 0x7f0800b7
+			public const int refresher = 2131230903;
+			
+			// aapt resource value: 0x7f0800b5
+			public const int relativeLayout1 = 2131230901;
 			
 			// aapt resource value: 0x7f08004b
 			public const int right = 2131230795;
@@ -4698,11 +4731,14 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f080072
 			public const int titleDividerNoCustom = 2131230834;
 			
+			// aapt resource value: 0x7f0800ae
+			public const int titleStartUp = 2131230894;
+			
 			// aapt resource value: 0x7f080070
 			public const int title_template = 2131230832;
 			
-			// aapt resource value: 0x7f0800ae
-			public const int toolbar = 2131230894;
+			// aapt resource value: 0x7f0800b1
+			public const int toolbar = 2131230897;
 			
 			// aapt resource value: 0x7f08003f
 			public const int top = 2131230783;
@@ -4740,8 +4776,8 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int visible = 2131230898;
+			// aapt resource value: 0x7f0800b9
+			public const int visible = 2131230905;
 			
 			// aapt resource value: 0x7f08003d
 			public const int withText = 2131230781;
@@ -4887,121 +4923,127 @@ namespace ANTToDo.Droid
 			public const int abc_select_dialog_material = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int design_bottom_navigation_item = 2130903067;
+			public const int CalendarPageActivityLayout = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int design_bottom_sheet_dialog = 2130903068;
+			public const int design_bottom_navigation_item = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int design_layout_snackbar = 2130903069;
+			public const int design_bottom_sheet_dialog = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int design_layout_snackbar_include = 2130903070;
+			public const int design_layout_snackbar = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int design_layout_tab_icon = 2130903071;
+			public const int design_layout_snackbar_include = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int design_layout_tab_text = 2130903072;
+			public const int design_layout_tab_icon = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int design_menu_item_action_area = 2130903073;
+			public const int design_layout_tab_text = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int design_navigation_item = 2130903074;
+			public const int design_menu_item_action_area = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int design_navigation_item_header = 2130903075;
+			public const int design_navigation_item = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int design_navigation_item_separator = 2130903076;
+			public const int design_navigation_item_header = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int design_navigation_item_subheader = 2130903077;
+			public const int design_navigation_item_separator = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int design_navigation_menu = 2130903078;
+			public const int design_navigation_item_subheader = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int design_navigation_menu_item = 2130903079;
+			public const int design_navigation_menu = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int design_text_input_password_icon = 2130903080;
+			public const int design_navigation_menu_item = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int Listitem_Activities = 2130903081;
+			public const int design_text_input_password_icon = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int notification_action = 2130903082;
+			public const int Listitem_Activities = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int notification_action_tombstone = 2130903083;
+			public const int notification_action = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int notification_media_action = 2130903084;
+			public const int notification_action_tombstone = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int notification_media_cancel_action = 2130903085;
+			public const int notification_media_action = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int notification_template_big_media = 2130903086;
+			public const int notification_media_cancel_action = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int notification_template_big_media_custom = 2130903087;
+			public const int notification_template_big_media = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int notification_template_big_media_narrow = 2130903088;
+			public const int notification_template_big_media_custom = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int notification_template_big_media_narrow_custom = 2130903089;
+			public const int notification_template_big_media_narrow = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int notification_template_custom_big = 2130903090;
+			public const int notification_template_big_media_narrow_custom = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int notification_template_icon_group = 2130903091;
+			public const int notification_template_custom_big = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int notification_template_lines_media = 2130903092;
+			public const int notification_template_icon_group = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int notification_template_media = 2130903093;
+			public const int notification_template_lines_media = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int notification_template_media_custom = 2130903094;
+			public const int notification_template_media = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int notification_template_part_chronometer = 2130903095;
+			public const int notification_template_media_custom = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int notification_template_part_time = 2130903096;
+			public const int notification_template_part_chronometer = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int select_dialog_item_material = 2130903097;
+			public const int notification_template_part_time = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int select_dialog_multichoice_material = 2130903098;
+			public const int select_dialog_item_material = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int select_dialog_singlechoice_material = 2130903099;
+			public const int select_dialog_multichoice_material = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int support_simple_spinner_dropdown_item = 2130903100;
+			public const int select_dialog_singlechoice_material = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int toolbar = 2130903101;
+			public const int StartUpPageActivityLayout = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int tooltip = 2130903102;
+			public const int support_simple_spinner_dropdown_item = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int View_AllActivities = 2130903103;
+			public const int toolbar = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int View_Detail = 2130903104;
+			public const int tooltip = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int View_SplashScreen = 2130903105;
+			public const int View_AllActivities = 2130903105;
+			
+			// aapt resource value: 0x7f030042
+			public const int View_Detail = 2130903106;
+			
+			// aapt resource value: 0x7f030043
+			public const int View_SplashScreen = 2130903107;
 			
 			static Layout()
 			{
@@ -5176,11 +5218,11 @@ namespace ANTToDo.Droid
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f0a018f
-			public const int Activities_Description = 2131362191;
+			// aapt resource value: 0x7f0a0190
+			public const int Activities_Description = 2131362192;
 			
-			// aapt resource value: 0x7f0a018d
-			public const int Activities_Item = 2131362189;
+			// aapt resource value: 0x7f0a018e
+			public const int Activities_Item = 2131362190;
 			
 			// aapt resource value: 0x7f0a009d
 			public const int AlertDialog_AppCompat = 2131361949;
@@ -5692,8 +5734,8 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f0a018b
 			public const int MyTheme = 2131362187;
 			
-			// aapt resource value: 0x7f0a018c
-			public const int MyTheme_Base = 2131362188;
+			// aapt resource value: 0x7f0a018d
+			public const int MyTheme_Base = 2131362189;
 			
 			// aapt resource value: 0x7f0a001e
 			public const int Platform_AppCompat = 2131361822;
@@ -6013,8 +6055,8 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f0a0102
 			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131362050;
 			
-			// aapt resource value: 0x7f0a018e
-			public const int Text_apperance = 2131362190;
+			// aapt resource value: 0x7f0a018f
+			public const int Text_apperance = 2131362191;
 			
 			// aapt resource value: 0x7f0a0103
 			public const int Theme_AppCompat = 2131362051;
@@ -6099,6 +6141,9 @@ namespace ANTToDo.Droid
 			
 			// aapt resource value: 0x7f0a018a
 			public const int Theme_Splash = 2131362186;
+			
+			// aapt resource value: 0x7f0a018c
+			public const int Theme_ToolBarStyle = 2131362188;
 			
 			// aapt resource value: 0x7f0a0111
 			public const int ThemeOverlay_AppCompat = 2131362065;

@@ -89,10 +89,10 @@ namespace ANTToDo.Core.ViewModels
         {
             get
             {
-                return new MvxCommand( () =>
+                return new MvxCommand(async () =>
                 {
-                     Mvx.Resolve<Repository>().DeleteActivities(_activities);
-                    _navigationService.Close(this , Status.Update);
+                    await Mvx.Resolve<Repository>().DeleteActivities(_activities);
+                    await _navigationService.Close(this, Status.Update);
                 });
             }
         }
@@ -101,20 +101,20 @@ namespace ANTToDo.Core.ViewModels
         {
             get
             {
-                return new MvxCommand( () =>
+                return new MvxCommand(async () =>
                 {
                     _activities.ImgPath = ImgPathHolder.Current;
                     if (!isNewActivities)
                     {
-                        Mvx.Resolve<Repository>().UpdateActivities(_activities);
+                        await Mvx.Resolve<Repository>().UpdateActivities(_activities);
                     }
                     else if (isNewActivities)
                     {
-                        Mvx.Resolve<Repository>().CreateActivities(_activities);
+                        await Mvx.Resolve<Repository>().CreateActivities(_activities);
                     }
 
                     ImgPathHolder.Current = null;
-                    _navigationService.Close(this,Status.Update);
+                    await _navigationService.Close(this, Status.Update);
                 });
             }
         }
