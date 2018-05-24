@@ -18,6 +18,8 @@ namespace ANTToDo.Core.Models
         [NotNull]
         public bool ActivitiesStatus { get; set; }
         
+        public DateTime ActivitiesDate { get; set; }
+        
         public string ImgPath { get; set; }
 
         public bool IsValid()

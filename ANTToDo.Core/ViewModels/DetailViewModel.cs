@@ -8,14 +8,14 @@ using MvvmCross.Platform;
 
 namespace ANTToDo.Core.ViewModels
 {
-    public class DetailViewModel : MvxViewModel<Activities,Status>
+    public class DetailViewModel : BaseViewModel<Activities,Status>
     {
         private Activities _activities;
-        public IMvxNavigationService _navigationService;
-        public DetailViewModel(IMvxNavigationService navigation)
+
+        public DetailViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
-            _navigationService = navigation;
         }
+
         private string _detailTitle;
         public string DetailTitle
         {
@@ -91,8 +91,8 @@ namespace ANTToDo.Core.ViewModels
             {
                 return new MvxCommand(async () =>
                 {
-                    await Mvx.Resolve<Repository>().DeleteActivities(_activities);
-                    await _navigationService.Close(this, Status.Update);
+                     _repository.DeleteActivities(_activities);
+                    _navigationService.Close(this , Status.Update);
                 });
             }
         }
@@ -106,11 +106,11 @@ namespace ANTToDo.Core.ViewModels
                     _activities.ImgPath = ImgPathHolder.Current;
                     if (!isNewActivities)
                     {
-                        await Mvx.Resolve<Repository>().UpdateActivities(_activities);
+                        _repository.UpdateActivities(_activities);
                     }
                     else if (isNewActivities)
                     {
-                        await Mvx.Resolve<Repository>().CreateActivities(_activities);
+                        _repository.CreateActivities(_activities);
                     }
 
                     ImgPathHolder.Current = null;
