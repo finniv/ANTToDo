@@ -43,6 +43,8 @@
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Services\ImgPathHolder.cs" />
     <Compile Include="ViewModels\AllActivitiesViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CalendarViewModel.cs" />
     <Compile Include="ViewModels\DetailViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

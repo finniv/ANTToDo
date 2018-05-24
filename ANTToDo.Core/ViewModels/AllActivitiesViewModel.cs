@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 using ANTToDo.Core.Data;
+using ANTToDo.Core.Interfaces;
 using ANTToDo.Core.Models;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
@@ -10,7 +11,7 @@ using MvvmCross.Plugins.Messenger;
 
 namespace ANTToDo.Core.ViewModels
 {
-    public class AllActivitiesViewModel : MvxViewModel
+    public class AllActivitiesViewModel : BaseViewModel
     {
         private List<Activities> _allActivitiesBind;
         public List<Activities> AllActivitiesBind
@@ -23,10 +24,9 @@ namespace ANTToDo.Core.ViewModels
             }
         }
        
-        public IMvxNavigationService _navigationService;
         public AllActivitiesViewModel(IMvxNavigationService navigation)
         {
-            _navigationService = navigation;
+
         }
 
         private string _addButtonText;
@@ -119,7 +119,7 @@ namespace ANTToDo.Core.ViewModels
 
         private void ReloadData()
         {
-            Task<List<Activities>> result = Mvx.Resolve<Repository>().GetAllActivities();
+            Task<List<Activities>> result = _repository.GetAllActivities();
             AllActivitiesBind = result.Result;
         }
 
