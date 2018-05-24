@@ -22,7 +22,7 @@ namespace ANTToDo.Core
 
         public void Start(object hint = null)
         {
-            _NavigationService.Navigate<AllActivitiesViewModel>();
+            _NavigationService.Navigate<StartUpPageViewModel>();
         }
     }
 }
