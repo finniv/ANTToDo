@@ -185,9 +185,10 @@
     <Compile Include="Services\FileAccessHelper.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\AllActivitiesView.cs" />
+    <Compile Include="Views\CalendarPageView.cs" />
     <Compile Include="Views\DetailView.cs" />
     <Compile Include="Views\SplashScreenView.cs" />
-    <Compile Include="Views\StartUpPageActivity.cs" />
+    <Compile Include="Views\StartUpPageView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -209,6 +210,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\CalendarPageActivityLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\calendar_of_tasks_cell.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

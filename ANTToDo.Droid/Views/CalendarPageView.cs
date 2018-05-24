@@ -14,15 +14,14 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace ANTToDo.Droid.Views
 {
-    [Activity(Label = "View Activities", NoHistory = false)]
-    public class StartUpPageActivity : MvxAppCompatActivity<StartUpPageViewModel>
+    [Activity(Label = "CalendarPageActivity", NoHistory = false)]
+    public class CalendarPageView : MvxAppCompatActivity<CalendarPageViewModel>
     {
-
-        protected override void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(bundle);
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.CalendarPageActivityLayout);
 
-            SetContentView(Resource.Layout.StartUpPageActivityLayout);
         }
     }
 }

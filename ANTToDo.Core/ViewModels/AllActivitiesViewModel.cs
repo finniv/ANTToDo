@@ -24,7 +24,7 @@ namespace ANTToDo.Core.ViewModels
             }
         }
        
-        public AllActivitiesViewModel(IMvxNavigationService navigation)
+        public AllActivitiesViewModel(IMvxNavigationService navigation) : base(navigation)
         {
 
         }
@@ -119,7 +119,7 @@ namespace ANTToDo.Core.ViewModels
 
         private void ReloadData()
         {
-            Task<List<Activities>> result = _repository.GetAllActivities();
+            Task<List<Activities>> result = Mvx.Resolve<IRepository>().GetAllActivities();
             AllActivitiesBind = result.Result;
         }
 

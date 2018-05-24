@@ -1,7 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <include
+        android:layout_alignParentTop="true"
+        layout="@layout/toolbar" />
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout1"
+            android:padding="20dp">
+            <RelativeLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/relativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/relativeDatePicker"
+                    android:layout_below="@+id/relativeTab"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="7dp">
+                    <MvxDatePicker
+                      
+                        local:MvxBind="Value PickedDay"
+                        android:textSize="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/mvxDatePicker1"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/relativeLayout2"
+                android:layout_marginBottom="60dp">
+                <Mvx.MvxListView
+                    android:minWidth="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:id="@+id/sessionsList"
+                    android:layout_marginTop="10dp"
+                    local:MvxBind="ItemsSource SessionsAtCurrentDay"
+                    local:MvxItemTemplate="@layout/calendar_of_tasks_cell"
+                    android:layout_marginBottom="60dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

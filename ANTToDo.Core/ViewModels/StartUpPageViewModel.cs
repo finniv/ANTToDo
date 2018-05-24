@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace ANTToDo.Core.ViewModels
 {
-    public class StartUpPageViewModel : MvxViewModel
+    public class StartUpPageViewModel : BaseViewModel
     {
-        StartUpPageViewModel()
+        StartUpPageViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
 
         }
@@ -23,7 +23,7 @@ namespace ANTToDo.Core.ViewModels
 
                 return new MvxCommand(() =>
                 {
-                   // Mvx.Resolve<IMvxNavigationService>().Navigate<CalendarPageViewModel>();
+                    Mvx.Resolve<IMvxNavigationService>().Navigate<CalendarPageViewModel>();
                 });
             }
         }

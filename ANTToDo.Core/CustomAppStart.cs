@@ -7,7 +7,7 @@ namespace ANTToDo.Core
     {
         public void Start(object hint = null)
         {
-            ShowViewModel<AllActivitiesViewModel>();
+            ShowViewModel<StartUpPageViewModel>();
         }
     }
 }

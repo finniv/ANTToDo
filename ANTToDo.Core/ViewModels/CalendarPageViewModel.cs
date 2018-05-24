@@ -1,4 +1,5 @@
 ﻿using ANTToDo.Core.Models;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,23 @@ using System.Threading.Tasks;
 
 namespace ANTToDo.Core.ViewModels
 {
-    public class CalendarPageViewModel : MvxViewModel
+    public class CalendarPageViewModel : BaseViewModel
     {
-        CalendarPageViewModel()
+        CalendarPageViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
             ListOfTasksByDate = new MvxObservableCollection<Activities>();
+            for (int i = 0; i < 4; i++)
+            {
+                ListOfTasksByDate.Add(new Activities()
+                {
+                    Id = 1,
+                    ActivitiesDate = DateTime.Now,
+                    ActivitiesDescription = "Test Description",
+                    ActivitiesStatus = true, 
+                    ActivitiesTitle = "Test Title",
+                    ImgPath = "",
+                });
+            }
         }
 
         private DateTime _tasksByDate;
