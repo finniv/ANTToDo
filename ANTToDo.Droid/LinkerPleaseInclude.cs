@@ -10,8 +10,7 @@ using MvvmCross.Core.ViewModels;
 
 namespace ANTToDo.Droid
 {
-    // This class is never actually executed, but when Xamarin linking is enabled it does how to ensure types and properties
-    // are preserved in the deployed app
+    
     public class LinkerPleaseInclude
     {
         public void Include(Button button)

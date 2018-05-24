@@ -1,4 +1,5 @@
 ﻿using ANTToDo.Core.Models;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace ANTToDo.Core.ViewModels
 {
-    public class CalendarPageViewModel : MvxViewModel
+    public class CalendarPageViewModel : BaseViewModel
     {
-        CalendarPageViewModel()
+        CalendarPageViewModel(IMvxNavigationService navigationService):base (navigationService)
         {
             ListOfTasksByDate = new MvxObservableCollection<Activities>();
         }

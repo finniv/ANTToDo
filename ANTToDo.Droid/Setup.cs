@@ -20,7 +20,7 @@ namespace ANTToDo.Droid
         {
             var dbConn = FileAccessHelper.GetLocalFilePath("activities.db3");
             Mvx.RegisterSingleton(new RepositoryService(dbConn));
-            return new Core.App();
+            return new App();
         }
     }
 }

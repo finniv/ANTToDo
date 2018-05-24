@@ -13,6 +13,11 @@ namespace ANTToDo.Core.ViewModels
 {
     public class AllActivitiesViewModel : BaseViewModel
     {
+
+        public AllActivitiesViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
+
         private List<Activities> _allActivitiesBind;
         public List<Activities> AllActivitiesBind
         {
@@ -24,10 +29,6 @@ namespace ANTToDo.Core.ViewModels
             }
         }
        
-        public AllActivitiesViewModel(IMvxNavigationService navigation)
-        {
-
-        }
 
         private string _addButtonText;
         public string AddButtonText
@@ -42,7 +43,7 @@ namespace ANTToDo.Core.ViewModels
 
         private async void Execute(Activities item)
         {
-          var res= await _navigationService.Navigate<DetailViewModel, Activities,Status>(item);
+          var res= await navigationService.Navigate<DetailViewModel, Activities,Status>(item);
             if (res == Status.Update)
             {
                 ReloadData();
@@ -89,6 +90,7 @@ namespace ANTToDo.Core.ViewModels
 
 
         MvxCommand _addActivitiesCommand;
+        
         public ICommand AddActivitiesCommand
         {
             get
@@ -100,7 +102,7 @@ namespace ANTToDo.Core.ViewModels
 
         private async void DoAddActivitiesCommand()
         {
-           var res= await _navigationService.Navigate<DetailViewModel,Status>();
+           var res= await navigationService.Navigate<DetailViewModel,Status>();
             if (res==Status.Update)
             {
                 ReloadData();
@@ -119,7 +121,7 @@ namespace ANTToDo.Core.ViewModels
 
         private void ReloadData()
         {
-            Task<List<Activities>> result = _repository.GetAllActivities();
+            Task<List<Activities>> result = repository.GetAllActivities();
             AllActivitiesBind = result.Result;
         }
 
