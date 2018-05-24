@@ -8,11 +8,11 @@ using SQLite;
 
 namespace ANTToDo.Core.Data
 {
-    public class Repository : IRepository
+    public class RepositoryService : IRepositoryService
     {
         private readonly SQLiteAsyncConnection conn;
 
-        public Repository(string dbPath)
+        public RepositoryService(string dbPath)
         {
             conn = new SQLiteAsyncConnection(dbPath);
             conn.CreateTableAsync<Activities>().Wait();
