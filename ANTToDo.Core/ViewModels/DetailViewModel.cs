@@ -89,7 +89,7 @@ namespace ANTToDo.Core.ViewModels
         {
             get
             {
-                return new MvxCommand( () =>
+                return new MvxCommand(async () =>
                 {
                      _repository.DeleteActivities(_activities);
                     _navigationService.Close(this , Status.Update);
@@ -101,7 +101,7 @@ namespace ANTToDo.Core.ViewModels
         {
             get
             {
-                return new MvxCommand( () =>
+                return new MvxCommand(async () =>
                 {
                     _activities.ImgPath = ImgPathHolder.Current;
                     if (!isNewActivities)
@@ -114,7 +114,7 @@ namespace ANTToDo.Core.ViewModels
                     }
 
                     ImgPathHolder.Current = null;
-                    _navigationService.Close(this,Status.Update);
+                    await _navigationService.Close(this, Status.Update);
                 });
             }
         }

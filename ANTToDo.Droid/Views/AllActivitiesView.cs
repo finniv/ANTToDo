@@ -10,7 +10,8 @@ using static Android.Resource.Color;
 
 namespace ANTToDo.Droid.Views
 {
-    [Activity(Label = "View Activities", NoHistory = false)]
+    
+       [Activity(Label = "View Activities", NoHistory = false)]
     public class AllActivitiesView : MvxAppCompatActivity<AllActivitiesViewModel>
     {
         private SwipeRefreshLayout swipe;
@@ -20,6 +21,7 @@ namespace ANTToDo.Droid.Views
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.View_AllActivities);
+
             swipe = FindViewById<SwipeRefreshLayout>(Resource.Id.refresher);
             swipe.SetColorScheme(HoloBlueBright, HoloBlueDark,
                 HoloGreenLight, HoloRedLight);
