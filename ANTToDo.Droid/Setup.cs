@@ -19,7 +19,7 @@ namespace ANTToDo.Droid
         protected override IMvxApplication CreateApp()
         {
             var dbConn = FileAccessHelper.GetLocalFilePath("activities.db3");
-            Mvx.RegisterSingleton(new Repository(dbConn));
+            Mvx.RegisterSingleton(new RepositoryService(dbConn));
             return new Core.App();
         }
     }
