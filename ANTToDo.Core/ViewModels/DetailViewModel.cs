@@ -16,6 +16,7 @@ namespace ANTToDo.Core.ViewModels
         public DetailViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
             DatePickerPopup = false;
+            _activities = new Activities();
             _activities.ActivitiesDate = DateTime.Now;
         }
 
@@ -31,12 +32,12 @@ namespace ANTToDo.Core.ViewModels
         }
 
         private DateTime _dateOfTask;
-        public DateTime DateOfTask
+        public DateTime DateOfTasks
         {
             get { return _dateOfTask; }
             set
             {
-                _dateOfTask = value;
+                _dateOfTask = _activities.ActivitiesDate;
                 RaisePropertyChanged("DateOfTask");
             }
         }
@@ -186,10 +187,16 @@ namespace ANTToDo.Core.ViewModels
             if (_activities.Id == 0)
             {
                 isNewActivities = true;
+                _activities = new Activities();
             }
             else if (_activities.Id != 0)
             {
                 isNewActivities = false;
+               
+            }
+            else if (_activities == null)
+            {
+                _activities = new Activities();
             }
 
             EditableField = isNewActivities;
