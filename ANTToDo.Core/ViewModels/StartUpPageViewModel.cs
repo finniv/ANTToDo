@@ -11,7 +11,7 @@ namespace ANTToDo.Core.ViewModels
 {
     public class StartUpPageViewModel : BaseViewModel
     {
-        StartUpPageViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        public StartUpPageViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
 
         }
@@ -23,7 +23,7 @@ namespace ANTToDo.Core.ViewModels
 
                 return new MvxCommand(() =>
                 {
-                    Mvx.Resolve<IMvxNavigationService>().Navigate<CalendarPageViewModel>();
+                    navigationService.Navigate<CalendarPageViewModel>();
                 });
             }
         }
@@ -35,7 +35,7 @@ namespace ANTToDo.Core.ViewModels
 
                 return new MvxCommand(() =>
                 {
-                    Mvx.Resolve<IMvxNavigationService>().Navigate<DetailViewModel>();
+                    navigationService.Navigate<DetailViewModel>();
                 });
             }
         }

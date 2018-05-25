@@ -1,14 +1,21 @@
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using MvvmCross.Platform.IoC;
 
 namespace ANTToDo.Core
 {
     public class App : MvxApplication
     {
-        public App()
+        public override void Initialize()
         {
-            var appStart = new CustomAppStart();
-            Mvx.RegisterSingleton<IMvxAppStart>(appStart);
+
+
+            CreatableTypes()
+                    .EndingWith("Service")
+                    .AsInterfaces()
+                    .RegisterAsLazySingleton();
+            RegisterCustomAppStart<CustomAppStart>();
+            
         }
     }
 }

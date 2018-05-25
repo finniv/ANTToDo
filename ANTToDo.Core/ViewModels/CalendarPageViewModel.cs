@@ -11,7 +11,7 @@ namespace ANTToDo.Core.ViewModels
 {
     public class CalendarPageViewModel : BaseViewModel
     {
-        CalendarPageViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        CalendarPageViewModel(IMvxNavigationService navigationService):base (navigationService)
         {
             ListOfTasksByDate = new MvxObservableCollection<Activities>();
             for (int i = 0; i < 4; i++)

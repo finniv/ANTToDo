@@ -19,12 +19,12 @@ namespace ANTToDo.Core.ViewModels
 
     public abstract class BaseViewModel : MvxViewModel, IBaseViewModel
     {
-      //  public IRepository _repository;
-        public IMvxNavigationService _navigationService;
+        public IRepositoryService repository;
+        public IMvxNavigationService navigationService;
 
         public BaseViewModel(IMvxNavigationService navigationService)
         {
-            _navigationService = navigationService;
+            this.navigationService = navigationService;
         }
 
         public override Task Initialize() => base.Initialize();
@@ -55,12 +55,16 @@ namespace ANTToDo.Core.ViewModels
     {
         protected TParameter _parameter;
         protected IMvxNavigationService _navigationService;
-        public IRepository _repository;
+        public IRepositoryService _repository;
 
-        public BaseViewModel(IMvxNavigationService navigationService)
+        public BaseViewModel(IMvxNavigationService navigationService,IRepositoryService repositoryService)
         {
-            _repository = Mvx.Resolve<Repository>();
-            _navigationService = Mvx.Resolve<IMvxNavigationService>();
+            _repository = repositoryService;
+            _navigationService = navigationService;
+        }
+
+        protected BaseViewModel(IMvxNavigationService navigationService)
+        {
         }
 
         public override void Prepare(TParameter parameter)

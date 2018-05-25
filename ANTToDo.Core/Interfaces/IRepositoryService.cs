@@ -4,7 +4,7 @@ using ANTToDo.Core.Models;
 
 namespace ANTToDo.Core.Interfaces
 {
-    public interface IRepository
+    public interface IRepositoryService
     {
         Task CreateActivities(Activities activities);
         Task DeleteActivities(Activities activities);
