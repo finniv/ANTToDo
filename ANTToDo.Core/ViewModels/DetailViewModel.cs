@@ -17,7 +17,11 @@ namespace ANTToDo.Core.ViewModels
         public DetailViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
             DatePickerPopup = false;
-            _activities.ActivitiesDate = DateTime.Now;
+            if (_activities==null)
+            {
+                _activities = new Activities();
+                _activities.ActivitiesDate = DateTime.Now;
+            }
         }
 
         public string DetailTitle
