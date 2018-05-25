@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8888"
+    local:MvxBind="Visibility DatePickerPopup"
+    android:gravity="center_vertical">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+     
+        android:id="@+id/date_picker_popup"
+        android:layout_gravity="center_vertical">
+        <MvxDatePicker
+           
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            local:MvxBind="Value _activities.ActivitiesDate"
+            android:textSize="40dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:text="Cancel"
+                android:textColor="#fff"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:id="@+id/next_button"
+                local:MvxBind="Click CancelDateCommand"
+               
+                android:layout_weight="50" />
+            <Button
+                android:text="Save"
+                android:textColor="#fff"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:id="@+id/next_button"
+                local:MvxBind="Click SaveDateCommand"
+               
+                android:layout_weight="50" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

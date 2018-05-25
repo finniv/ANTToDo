@@ -1,40 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
-    <RelativeLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/content"
-        android:gravity="center"
-        android:padding="40dp"
-        android:background="@color/red_main_color">
-        <TextView
-            android:text="AnToDo"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/titleStartUp"
-            android:layout_marginBottom="100dp" />
-        <Button
-            android:text="Details"
-            local:MvxBind="Click DeteilsViewSelectedCommand"
+            android:layout_weight="0"
+            android:id="@+id/linearLayout2" />
+        <LinearLayout
             android:layout_width="wrap_content"
+            android:id="@+id/layout_container"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/firstLoginScreen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#eeeeee"
+                android:padding="30dp">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/linearLayout3"
+                    android:background="#ffffff">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/offersButtonsLayout"
+                        android:gravity="center">
+                        <TextView
+                            android:text="AnToDo"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/titleStartUp"
+                            android:layout_marginBottom="100dp" />
+                        <Button
+                            android:text="Details"
+                            local:MvxBind="Click DeteilsViewSelectedCommand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/detailActivities"
+                            android:background="@drawable/buttons_blue"
+                            android:layout_below="@+id/titleStartUp"
+                            android:layout_marginBottom="20dp" />
+                        <Button
+                            android:text="Calendar"
+                            android:layout_width="wrap_content"
+                            local:MvxBind="Click CalendarViewSelectedCommand"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/buttons_blue"
+                            android:id="@+id/calendarActivities"
+                            android:layout_below="@+id/detailActivities" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/socialLoginScreen"
+                android:layout_alignTop="@id/firstLoginScreen"
+                android:layout_toRightOf="@id/firstLoginScreen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:background="#eeeeee"
+                android:padding="30dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/detailActivities"
-            android:layout_below="@+id/titleStartUp"
-            android:layout_marginBottom="20dp" />
-        <Button
-            android:text="Calendar"
-            android:layout_width="wrap_content"
-            local:MvxBind="Click CalendarViewSelectedCommand"
-            android:layout_height="wrap_content"
-            android:id="@+id/calendarActivities"
-            android:layout_below="@+id/detailActivities" />
-    </RelativeLayout>
-</LinearLayout>
+            android:layout_weight="0"
+            android:id="@+id/offersButtonsLayout" />
+    </LinearLayout>
+</RelativeLayout>

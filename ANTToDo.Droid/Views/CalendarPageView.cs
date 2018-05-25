@@ -7,6 +7,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using ANTToDo.Core.ViewModels;
@@ -22,6 +23,10 @@ namespace ANTToDo.Droid.Views
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.CalendarPageActivityLayout);
 
+        }
+        public override View OnCreateView(string name, Context context, IAttributeSet attrs)
+        {
+            return base.OnCreateView(name, context, attrs);
         }
     }
 }
