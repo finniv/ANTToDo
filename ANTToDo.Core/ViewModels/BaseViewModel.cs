@@ -19,13 +19,14 @@ namespace ANTToDo.Core.ViewModels
 
     public abstract class BaseViewModel : MvxViewModel, IBaseViewModel
     {
-        public IRepositoryService repository;
         public IMvxNavigationService navigationService;
-
-        public BaseViewModel(IMvxNavigationService navigationService)
+        public IRepositoryService repositoryService;
+        public BaseViewModel(IMvxNavigationService _navigationService)
         {
-            this.navigationService = navigationService;
+            navigationService = _navigationService;
+            repositoryService = Mvx.Resolve<RepositoryService>();
         }
+        
 
         public override Task Initialize() => base.Initialize();
         public override void Prepare() => base.Prepare();

@@ -23,7 +23,7 @@
             android:layout_marginBottom="100dp" />
         <Button
             android:text="Details"
-            local:MvxBind="Click DeteilsViewSelectedCommand"
+            local:MvxBind="Click AllViewnavigationCommand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/detailActivities"
