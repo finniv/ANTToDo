@@ -16,6 +16,8 @@ namespace ANTToDo.Core.ViewModels
 
         public DetailViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
+            DatePickerPopup = false;
+            _activities.ActivitiesDate = DateTime.Now;
         }
 
         public string DetailTitle
@@ -28,7 +30,28 @@ namespace ANTToDo.Core.ViewModels
             }
         }
 
-        public string DetailImgUrl
+        private DateTime _dateOfTask;
+        public DateTime DateOfTask
+        {
+            get { return _dateOfTask; }
+            set
+            {
+                _dateOfTask = value;
+                RaisePropertyChanged("DateOfTask");
+            }
+        }
+        private bool _datePickerPopup;
+        public bool DatePickerPopup
+        {
+            get { return _datePickerPopup; }
+            set
+            {
+                _datePickerPopup = value;
+                RaisePropertyChanged("DatePickerPopup");
+            }
+        }
+
+        public  string DetailImgUrl
         {
             get { return _activities.ImgPath; }
             set { _activities.ImgPath = ImgPathHolder.Current; RaisePropertyChanged("DetailImgUrl"); }
@@ -94,6 +117,38 @@ namespace ANTToDo.Core.ViewModels
                 {
                     await _repository.DeleteActivities(_activities);
                     await _navigationService.Close(this, Status.Update);
+                });
+            }
+        }
+        public ICommand CancelDateCommand
+        {
+            get
+            {
+                return new MvxCommand(async () =>
+                {
+                    DatePickerPopup = false;
+                    
+                });
+            }
+        }
+        public ICommand SaveDateCommand
+        {
+            get
+            {
+                return new MvxCommand(async () =>
+                {
+                    DatePickerPopup = false;
+                });
+            }
+        }
+
+        public ICommand PickDateOfTaskCommand
+        {
+            get
+            {
+                return new MvxCommand(async () =>
+                {
+                    DatePickerPopup= true;
                 });
             }
         }
