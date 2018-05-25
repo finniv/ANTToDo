@@ -37,12 +37,12 @@ namespace ANTToDo.Core.ViewModels
         }
 
         private DateTime _dateOfTask;
-        public DateTime DateOfTask
+        public DateTime DateOfTasks
         {
             get { return _dateOfTask; }
             set
             {
-                _dateOfTask = value;
+                _dateOfTask = _activities.ActivitiesDate;
                 RaisePropertyChanged("DateOfTask");
             }
         }

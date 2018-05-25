@@ -7,6 +7,7 @@ using MvvmCross.Platform;
 using ANTToDo.Core;
 using ANTToDo.Core.Data;
 using ANTToDo.Core.Models;
+using ANTToDo.Droid.Converter;
 
 namespace ANTToDo.Droid
 {
@@ -22,5 +23,12 @@ namespace ANTToDo.Droid
             Mvx.RegisterSingleton(new RepositoryService(dbConn));
             return new App();
         }
+        protected override void FillValueConverters(MvvmCross.Platform.Converters.IMvxValueConverterRegistry registry)
+        {
+            base.FillValueConverters(registry);
+            registry.AddOrOverwrite("VisibilityValueConverter", new VisibilityValueConverter());
+
+        }
+
     }
 }

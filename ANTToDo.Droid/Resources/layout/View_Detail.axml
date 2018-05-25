@@ -4,6 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <include
+        layout="@layout/date_picker_popup"
+        android:layout_marginLeft="0.0dp" />
     <EditText
         android:layout_alignParentBottom="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -68,7 +71,4 @@
             android:layout_gravity="bottom"
             android:layout_marginLeft="2.0dp" />
     </LinearLayout>
-    <include
-        layout="@layout/date_picker_popup"
-        android:layout_marginLeft="0.0dp" />
 </LinearLayout>
