@@ -6,6 +6,7 @@ using Android.Provider;
 using Android.Support.V7.Widget;
 using ANTToDo.Core.Services;
 using ANTToDo.Core.ViewModels;
+using ANTToDo.Droid.Helper;
 using MvvmCross.Binding.Droid.Views;
 using MvvmCross.Droid.Support.V7.AppCompat;
 
@@ -15,6 +16,7 @@ namespace ANTToDo.Droid.Views
     public class DetailView : MvxAppCompatActivity<DetailViewModel>
     {
         private MvxImageView imgPath;
+        private PhotoGalleryService galleryService;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -32,31 +34,25 @@ namespace ANTToDo.Droid.Views
             }
 
             imgPath = FindViewById<MvxImageView>(Resource.Id.DetailImgView);
+            galleryService = new PhotoGalleryService(this, imgPath);
             imgPath.Click += delegate
             {
-                CreateImageIntent();
+                galleryService.BtnUpdatePhoto();
             };
             
         }
 
-        private void CreateImageIntent()
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
-            var imageIntent = new Intent();
-            imageIntent.SetType("image/*");
-            imageIntent.SetAction(Intent.ActionGetContent);
-            StartActivityForResult(Intent.CreateChooser(imageIntent , "Select photo") , 0);
-        }
-        protected override void OnActivityResult(int requestCode , Android.App.Result resultCode , Intent data)
-        {
-            base.OnActivityResult(requestCode , resultCode , data);
-            if (resultCode == Android.App.Result.Ok)
+            base.OnActivityResult(requestCode, resultCode, data);
+            var result = galleryService.OnActivityResult(requestCode, (int)resultCode, data);
+            if (result == null)
             {
-                Android.Net.Uri uri = data.Data;
-                imgPath.ImageUrl = uri.Path;
-                ImgPathHolder.Current = GetRealPathFromURI(uri);
-                
+                return;
             }
+            ViewModel.SaveNewPhoto(result);
         }
+        
 
         private string GetRealPathFromURI(Android.Net.Uri contentURI)
         {

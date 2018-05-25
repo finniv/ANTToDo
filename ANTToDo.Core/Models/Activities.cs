@@ -20,7 +20,7 @@ namespace ANTToDo.Core.Models
         
         public DateTime ActivitiesDate { get; set; }
         
-        public string ImgPath { get; set; }
+        public string Base64 { get; set; }
 
         public bool IsValid()
         {

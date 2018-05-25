@@ -19,8 +19,10 @@ namespace ANTToDo.Core.ViewModels
             DatePickerPopup = false;
             if (_activities==null)
             {
-                _activities = new Activities();
-                _activities.ActivitiesDate = DateTime.Now;
+                _activities = new Activities
+                {
+                    ActivitiesDate = DateTime.Now
+                };
             }
         }
 
@@ -57,11 +59,10 @@ namespace ANTToDo.Core.ViewModels
 
         public  string DetailImgUrl
         {
-            get { return _activities.ImgPath; }
-            set { _activities.ImgPath = ImgPathHolder.Current; RaisePropertyChanged("DetailImgUrl"); }
+            get { return _activities.Base64; }
+            set { _activities.Base64 = ImgPathHolder.Current; RaisePropertyChanged("DetailImgUrl"); }
         }
-
-
+        
         private string _detailDescription = new ImgPathHolder().ImgPathString;
         public string DetailDescription
         {
@@ -167,7 +168,7 @@ namespace ANTToDo.Core.ViewModels
                     {
 
 
-                        _activities.ImgPath = ImgPathHolder.Current;
+                        _activities.Base64 = ImgPathHolder.Current;
                         if (!isNewActivities)
                         {
                             await _repository.UpdateActivities(_activities);
@@ -193,6 +194,13 @@ namespace ANTToDo.Core.ViewModels
             ActivitiesChecker(activities);
         }
 
+        public void SaveNewPhoto(byte[] result)
+        {
+            if (_activities!=null)
+            {
+                _activities.Base64 = Convert.ToBase64String(result);
+            }
+        }
         private void ActivitiesChecker(Activities activities)
         {
             try

@@ -23,7 +23,7 @@ namespace ANTToDo.Core.ViewModels
                     ActivitiesDescription = "Test Description",
                     ActivitiesStatus = true,
                     ActivitiesTitle = "Test Title",
-                    ImgPath = "",
+                    Base64 = "",
                 });
             }
             TasksByDate = DateTime.Now;

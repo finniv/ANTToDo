@@ -180,6 +180,7 @@
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Converter\BytesToBitmapValueConverter.cs" />
     <Compile Include="DebugTrace.cs" />
+    <Compile Include="Helper\PhotoGalleryService.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
