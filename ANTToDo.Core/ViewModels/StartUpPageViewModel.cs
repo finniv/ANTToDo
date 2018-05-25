@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace ANTToDo.Core.ViewModels
 {
     public class StartUpPageViewModel : BaseViewModel
-    {
+    { 
         public StartUpPageViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
 
