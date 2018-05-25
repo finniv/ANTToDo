@@ -26,6 +26,12 @@ namespace ANTToDo.Core.ViewModels
                     ImgPath = "",
                 });
             }
+            TasksByDate = DateTime.Now;
+        }
+
+        public override void Start()
+        {
+            base.Start();
         }
 
         private DateTime _tasksByDate;
