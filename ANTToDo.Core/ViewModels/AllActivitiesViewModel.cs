@@ -1,19 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using ANTToDo.Core.Data;
-using ANTToDo.Core.Interfaces;
 using ANTToDo.Core.Models;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
 
 namespace ANTToDo.Core.ViewModels
 {
     public class AllActivitiesViewModel : BaseViewModel
     {
-
         public AllActivitiesViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
         }
@@ -46,7 +41,7 @@ namespace ANTToDo.Core.ViewModels
           var res= await navigationService.Navigate<DetailViewModel, Activities,Status>(item);
             if (res == Status.Update)
             {
-                ReloadData();
+               await ReloadData();
             }
         }
 
@@ -90,7 +85,6 @@ namespace ANTToDo.Core.ViewModels
 
 
         MvxCommand _addActivitiesCommand;
-        
         public ICommand AddActivitiesCommand
         {
             get
@@ -105,7 +99,7 @@ namespace ANTToDo.Core.ViewModels
            var res= await navigationService.Navigate<DetailViewModel,Status>();
             if (res==Status.Update)
             {
-                ReloadData();
+                await ReloadData();
             }
         }
         
@@ -119,16 +113,17 @@ namespace ANTToDo.Core.ViewModels
             };
         }
 
-        private void ReloadData()
+        private async Task ReloadData()
         {
-            Task<List<Activities>> result = repository.GetAllActivities();
-            AllActivitiesBind = result.Result;
+            var result = await repositoryService.GetAllActivities();
+            AllActivitiesBind = result;
         }
 
-        public void Init()
+        public override Task Initialize()
         {
-            ReloadData();
+            base.Initialize();
+            return ReloadData();
         }
-        
+
     }
 }

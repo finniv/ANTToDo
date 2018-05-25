@@ -20,22 +20,21 @@ namespace ANTToDo.Core.ViewModels
         {
             get
             {
-
-                return new MvxCommand(() =>
+                return new MvxAsyncCommand(async() =>
                 {
-                    navigationService.Navigate<CalendarPageViewModel>();
+                    await navigationService.Navigate<CalendarPageViewModel>();
                 });
             }
         }
 
-        public IMvxCommand DeteilsViewSelectedCommand
+        public IMvxCommand AllViewnavigationCommand
         {
             get
             {
 
-                return new MvxCommand(() =>
+                return new MvxAsyncCommand(async() =>
                 {
-                    navigationService.Navigate<DetailViewModel>();
+                    await navigationService.Navigate<AllActivitiesViewModel>();
                 });
             }
         }

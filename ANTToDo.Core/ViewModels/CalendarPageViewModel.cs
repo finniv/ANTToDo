@@ -11,7 +11,7 @@ namespace ANTToDo.Core.ViewModels
 {
     public class CalendarPageViewModel : BaseViewModel
     {
-        public CalendarPageViewModel(IMvxNavigationService navigationService) : base (navigationService)
+        public CalendarPageViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
             ListOfTasksByDate = new MvxObservableCollection<Activities>();
             for (int i = 0; i < 4; i++)
@@ -21,7 +21,7 @@ namespace ANTToDo.Core.ViewModels
                     Id = 1,
                     ActivitiesDate = DateTime.Now,
                     ActivitiesDescription = "Test Description",
-                    ActivitiesStatus = true, 
+                    ActivitiesStatus = true,
                     ActivitiesTitle = "Test Title",
                     ImgPath = "",
                 });
@@ -47,12 +47,5 @@ namespace ANTToDo.Core.ViewModels
             get => _listOfTasksByDate;
             set => SetProperty(ref _listOfTasksByDate, value);
         }
-
-
-
-
-
-
-
     }
 }
