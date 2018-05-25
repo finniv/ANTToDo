@@ -66,6 +66,8 @@ namespace ANTToDo.Core.ViewModels
 
         protected BaseViewModel(IMvxNavigationService navigationService)
         {
+            _repository = Mvx.Resolve<RepositoryService>();
+            _navigationService = navigationService;
         }
 
         public override void Prepare(TParameter parameter)

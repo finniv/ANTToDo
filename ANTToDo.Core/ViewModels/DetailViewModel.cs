@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Diagnostics;
+using System.Windows.Input;
 using ANTToDo.Core.Data;
 using ANTToDo.Core.Models;
 using ANTToDo.Core.Services;
@@ -8,7 +10,7 @@ using MvvmCross.Platform;
 
 namespace ANTToDo.Core.ViewModels
 {
-    public class DetailViewModel : BaseViewModel<Activities,Status>
+    public class DetailViewModel : BaseViewModel<Activities, Status>
     {
         private Activities _activities;
 
@@ -16,7 +18,6 @@ namespace ANTToDo.Core.ViewModels
         {
         }
 
-        private string _detailTitle;
         public string DetailTitle
         {
             get { return _activities.ActivitiesTitle; }
@@ -26,14 +27,14 @@ namespace ANTToDo.Core.ViewModels
                 RaisePropertyChanged("DetailTitle");
             }
         }
-        
-        public  string DetailImgUrl
+
+        public string DetailImgUrl
         {
-            get { return _activities.ImgPath;}
+            get { return _activities.ImgPath; }
             set { _activities.ImgPath = ImgPathHolder.Current; RaisePropertyChanged("DetailImgUrl"); }
         }
-        
-        
+
+
         private string _detailDescription = new ImgPathHolder().ImgPathString;
         public string DetailDescription
         {
@@ -91,8 +92,8 @@ namespace ANTToDo.Core.ViewModels
             {
                 return new MvxCommand(async () =>
                 {
-                     _repository.DeleteActivities(_activities);
-                    _navigationService.Close(this , Status.Update);
+                    await _repository.DeleteActivities(_activities);
+                    await _navigationService.Close(this, Status.Update);
                 });
             }
         }
@@ -103,18 +104,27 @@ namespace ANTToDo.Core.ViewModels
             {
                 return new MvxCommand(async () =>
                 {
-                    _activities.ImgPath = ImgPathHolder.Current;
-                    if (!isNewActivities)
+                    try
                     {
-                        _repository.UpdateActivities(_activities);
-                    }
-                    else if (isNewActivities)
-                    {
-                        _repository.CreateActivities(_activities);
-                    }
 
-                    ImgPathHolder.Current = null;
-                    await _navigationService.Close(this, Status.Update);
+
+                        _activities.ImgPath = ImgPathHolder.Current;
+                        if (!isNewActivities)
+                        {
+                            await _repository.UpdateActivities(_activities);
+                        }
+                        else if (isNewActivities)
+                        {
+                            await _repository.CreateActivities(_activities);
+                        }
+
+                        ImgPathHolder.Current = null;
+                        await _navigationService.Close(this, Status.Update);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex); 
+                    }
                 });
             }
         }
@@ -126,18 +136,27 @@ namespace ANTToDo.Core.ViewModels
 
         private void ActivitiesChecker(Activities activities)
         {
-            _activities = activities;
-            if (_activities.Id == 0)
+            try
             {
-                isNewActivities = true;
-            }
-            else if (_activities.Id != 0)
-            {
-                isNewActivities = false;
-            }
 
-            EditableField = isNewActivities;
-            EditableCheckBox = !isNewActivities;
+
+                _activities = activities;
+                if (_activities.Id == 0)
+                {
+                    isNewActivities = true;
+                }
+                else if (_activities.Id != 0)
+                {
+                    isNewActivities = false;
+                }
+
+                EditableField = isNewActivities;
+                EditableCheckBox = !isNewActivities;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
         }
 
         public override void Prepare(Activities activities)

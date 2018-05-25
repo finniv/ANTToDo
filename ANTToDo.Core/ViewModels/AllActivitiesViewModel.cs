@@ -1,13 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using ANTToDo.Core.Data;
-using ANTToDo.Core.Interfaces;
 using ANTToDo.Core.Models;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
 
 namespace ANTToDo.Core.ViewModels
 {
