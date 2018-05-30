@@ -13,6 +13,11 @@ namespace ANTToDo.Core.ViewModels
     public class DetailViewModel : BaseViewModel<Activities, Status>
     {
         private Activities _activities;
+        public Activities Activities
+        {
+            get => _activities;
+            set => SetProperty(ref _activities, value);
+        }
 
         public DetailViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
@@ -62,8 +67,8 @@ namespace ANTToDo.Core.ViewModels
             get { return _activities.Base64; }
             set { _activities.Base64 = ImgPathHolder.Current; RaisePropertyChanged("DetailImgUrl"); }
         }
-        
-        private string _detailDescription = new ImgPathHolder().ImgPathString;
+
+        private string _detailDescription;
         public string DetailDescription
         {
             get { return _activities.ActivitiesDescription; }
@@ -166,9 +171,6 @@ namespace ANTToDo.Core.ViewModels
                 {
                     try
                     {
-
-
-                        _activities.Base64 = ImgPathHolder.Current;
                         if (!isNewActivities)
                         {
                             await _repository.UpdateActivities(_activities);

@@ -27,7 +27,7 @@ namespace ANTToDo.Droid
         {
             base.FillValueConverters(registry);
             registry.AddOrOverwrite("VisibilityValueConverter", new VisibilityValueConverter());
-
+            registry.AddOrOverwrite("StringToByteArray", new StringToByteArrayValueConverter());
         }
 
     }

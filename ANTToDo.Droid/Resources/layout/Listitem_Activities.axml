@@ -11,7 +11,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/defaultactivities"
-            local:MvxBind="ImageUrl ImgPath"/>
+            local:MvxBind="Bitmap StringToByteArray(Base64)" />
         <TextView
             android:layout_alignParentBottom="true"
             android:textAppearance="?android:attr/textAppearanceLarge"

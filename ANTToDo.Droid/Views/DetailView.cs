@@ -21,7 +21,7 @@ namespace ANTToDo.Droid.Views
         {
             base.OnCreate(bundle);
 
-            SetContentView(Resource.Layout.View_Detail);
+            SetContentView(Resource.Layout.View_detailActivities);
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
 

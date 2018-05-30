@@ -179,6 +179,7 @@
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Converter\BytesToBitmapValueConverter.cs" />
+    <Compile Include="Converter\StringToByteArrayValueConverter.cs" />
     <Compile Include="Converter\VisibilityValueConverter.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="Helper\PhotoGalleryService.cs" />
@@ -263,6 +264,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\buttons_blue.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\View_detailActivities.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

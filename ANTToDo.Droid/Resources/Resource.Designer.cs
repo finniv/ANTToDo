@@ -4365,6 +4365,9 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f080048
 			public const int center_vertical = 2131230792;
 			
+			// aapt resource value: 0x7f0800cc
+			public const int checkBox1 = 2131230924;
+			
 			// aapt resource value: 0x7f080074
 			public const int checkbox = 2131230836;
 			
@@ -4395,6 +4398,12 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f08006d
 			public const int customPanel = 2131230829;
 			
+			// aapt resource value: 0x7f0800cf
+			public const int dataFromQuality = 2131230927;
+			
+			// aapt resource value: 0x7f0800d0
+			public const int dataToQuality = 2131230928;
+			
 			// aapt resource value: 0x7f080096
 			public const int date_picker_popup = 2131230870;
 			
@@ -4424,6 +4433,12 @@ namespace ANTToDo.Droid
 			
 			// aapt resource value: 0x7f080021
 			public const int disableHome = 2131230753;
+			
+			// aapt resource value: 0x7f0800ca
+			public const int editText1 = 2131230922;
+			
+			// aapt resource value: 0x7f0800cb
+			public const int editText2 = 2131230923;
 			
 			// aapt resource value: 0x7f08007f
 			public const int edit_query = 2131230847;
@@ -4530,8 +4545,8 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f0800c3
 			public const int ll_toolbar = 2131230915;
 			
-			// aapt resource value: 0x7f0800ca
-			public const int masked = 2131230922;
+			// aapt resource value: 0x7f0800d2
+			public const int masked = 2131230930;
 			
 			// aapt resource value: 0x7f0800ac
 			public const int media_actions = 2131230892;
@@ -4650,6 +4665,9 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f080069
 			public const int scrollView = 2131230825;
 			
+			// aapt resource value: 0x7f0800c9
+			public const int scrollView1 = 2131230921;
+			
 			// aapt resource value: 0x7f080056
 			public const int scrollable = 2131230806;
 			
@@ -4746,6 +4764,12 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f080020
 			public const int tabMode = 2131230752;
 			
+			// aapt resource value: 0x7f0800cd
+			public const int tableLayout1 = 2131230925;
+			
+			// aapt resource value: 0x7f0800ce
+			public const int tableRow1 = 2131230926;
+			
 			// aapt resource value: 0x7f080019
 			public const int text = 2131230745;
 			
@@ -4827,8 +4851,8 @@ namespace ANTToDo.Droid
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800c9
-			public const int visible = 2131230921;
+			// aapt resource value: 0x7f0800d1
+			public const int visible = 2131230929;
 			
 			// aapt resource value: 0x7f08003d
 			public const int withText = 2131230781;
@@ -5100,7 +5124,10 @@ namespace ANTToDo.Droid
 			public const int View_Detail = 2130903108;
 			
 			// aapt resource value: 0x7f030045
-			public const int View_SplashScreen = 2130903109;
+			public const int View_detailActivities = 2130903109;
+			
+			// aapt resource value: 0x7f030046
+			public const int View_SplashScreen = 2130903110;
 			
 			static Layout()
 			{
