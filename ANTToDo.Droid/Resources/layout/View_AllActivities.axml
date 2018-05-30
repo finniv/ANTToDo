@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:scrollbars="horizontal">
         <include
-            layout="@layout/toolbar" />
+            layout="@layout/alltoolbar" />
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
