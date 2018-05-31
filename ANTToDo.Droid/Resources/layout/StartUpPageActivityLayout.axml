@@ -56,20 +56,22 @@
                         <Button
                             android:text="All tasks"
                             local:MvxBind="Click AllViewnavigationCommand"
-                            android:layout_width="wrap_content"
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/detailActivities"
                             android:background="@drawable/buttons_blue"
                             android:layout_below="@+id/titleStartUp"
-                            android:layout_marginBottom="20dp" />
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginHorizontal="15dp" />
                         <Button
                             android:text="Calendar"
-                            android:layout_width="wrap_content"
+                            android:layout_width="fill_parent"
                             local:MvxBind="Click CalendarViewSelectedCommand"
                             android:layout_height="wrap_content"
                             android:background="@drawable/buttons_blue"
                             android:id="@+id/calendarActivities"
-                            android:layout_below="@+id/detailActivities" />
+                            android:layout_below="@+id/detailActivities"
+                            android:layout_marginHorizontal="15dp" />
                     </RelativeLayout>
                 </LinearLayout>
             </RelativeLayout>

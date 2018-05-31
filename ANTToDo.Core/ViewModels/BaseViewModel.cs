@@ -45,10 +45,10 @@ namespace ANTToDo.Core.ViewModels
         protected override void ReloadFromBundle(IMvxBundle state) => base.ReloadFromBundle(state);
         protected override void SaveStateToBundle(IMvxBundle bundle) => base.SaveStateToBundle(bundle);
         protected override bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null) => base.SetProperty(ref storage, value, propertyName);
-        public void Close()
+        public virtual MvxCommand GoBackCommand => new MvxCommand(() =>
         {
-
-        }
+            Close(this);
+        });
     }
 
     public abstract class BaseViewModel<TParameter, TResult> : MvxViewModel<TParameter, TResult>, IBaseViewModel
@@ -69,6 +69,11 @@ namespace ANTToDo.Core.ViewModels
             _repository = Mvx.Resolve<RepositoryService>();
             _navigationService = navigationService;
         }
+
+        public virtual MvxCommand GoBackCommand => new MvxCommand(() =>
+        {
+            Close(this);
+        });
 
         public override void Prepare(TParameter parameter)
         {

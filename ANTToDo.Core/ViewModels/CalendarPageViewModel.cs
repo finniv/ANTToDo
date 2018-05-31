@@ -11,6 +11,7 @@ namespace ANTToDo.Core.ViewModels
 {
     public class CalendarPageViewModel : BaseViewModel
     {
+        #region LifeCycle
         public CalendarPageViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
             ListOfTasksByDate = new MvxObservableCollection<Activities>();
@@ -27,25 +28,77 @@ namespace ANTToDo.Core.ViewModels
                 });
             }
             TasksByDate = DateTime.Now;
+
         }
 
         public override void Start()
         {
             base.Start();
         }
-
+        public override async Task Initialize()
+        {
+             AllTasks = await repositoryService.GetAllActivities();
+        }
+        #endregion
         private DateTime _tasksByDate;
         public DateTime TasksByDate
         {
             get => _tasksByDate;
-            set => SetProperty(ref _tasksByDate, value);
+            set
+            {
+                SetProperty(ref _tasksByDate, value);
+                ListOfTasksByDate = new MvxObservableCollection<Activities>( AllTasks
+                    .Select(item => item)
+                    .Where(i=>i.ActivitiesDate==value)
+                    .ToList());
+            }
         }
+        
+        private List<Activities> _allTasks;
+        public List<Activities> AllTasks
+        {
+            get
+            {
+                if (_allTasks==null)
+                {
+                    _allTasks = new List<Activities>();
+                }
+                return _allTasks;
+                
+            }
+            set
+            {
+                if (_allTasks == null)
+                {
+                    _allTasks = new List<Activities>();
+                }
+                SetProperty(ref _allTasks, value);
+            }
+        }
+
+
 
         private MvxObservableCollection<Activities> _listOfTasksByDate;
         public MvxObservableCollection<Activities> ListOfTasksByDate
         {
-            get => _listOfTasksByDate;
-            set => SetProperty(ref _listOfTasksByDate, value);
+            get
+            {
+                if (_listOfTasksByDate == null)
+                {
+                    _listOfTasksByDate = new  MvxObservableCollection<Activities>();
+                }
+                return _listOfTasksByDate;
+            }
+            set
+            {
+                if (_listOfTasksByDate == null)
+                {
+                    _listOfTasksByDate = new MvxObservableCollection<Activities>();
+                }
+                SetProperty(ref _listOfTasksByDate, value);
+            }
         }
+
+
     }
 }

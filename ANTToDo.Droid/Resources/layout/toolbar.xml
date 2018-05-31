@@ -21,14 +21,6 @@
         app:MvxBind="Click GoBackCommand"
         android:background="@null"
         app:srcCompat="@drawable/ic_ab_back_material_dark" />
-    <ImageButton
-        android:id="@+id/plustButton"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_alignParentRight="true"
-        app:MvxBind="Click AddNewTask"
-        android:background="@null"
-        app:srcCompat="@drawable/ic_ab_back_material_dark" />
     <RelativeLayout
         android:minWidth="25px"
         android:minHeight="25px"
