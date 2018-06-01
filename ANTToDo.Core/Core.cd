@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ANTToDo.Core.Data.RepositoryService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAABCAAAQAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Data\RepositoryService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ANTToDo.Core.Models.Activities" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAwAIABAAFAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Activities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ANTToDo.Core.ViewModels.AllActivitiesViewModel">
+    <Position X="6.25" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACRAASQAAAAAAAiAAQAABAAAEEAACQEAAAA=</HashCode>
+      <FileName>ViewModels\AllActivitiesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ANTToDo.Core.ViewModels.BaseViewModel">
+    <Position X="9.25" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAEABAQAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ANTToDo.Core.ViewModels.BaseViewModel&lt;TParameter, TResult&gt;">
+    <Position X="13" Y="8.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAhBAAACEGAAQQIEpAAAACAAAAEAAAAAEAAAAAIAAIQ=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ANTToDo.Core.ViewModels.CalendarPageViewModel">
+    <Position X="9.25" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgEACgAAQAABAAAAAAAAAAAAAAAAAAAAAAQAIA=</HashCode>
+      <FileName>ViewModels\CalendarPageViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ANTToDo.Core.ViewModels.DetailViewModel">
+    <Position X="13" Y="14.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAEACgCAAASAABAAAIAoCAAkAAQAKAABASAIAAwAY=</HashCode>
+      <FileName>ViewModels\DetailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ANTToDo.Core.ViewModels.StartUpPageViewModel">
+    <Position X="12" Y="6" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\StartUpPageViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ANTToDo.Core.App" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ANTToDo.Core.CustomAppStart" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomAppStart.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="ANTToDo.Core.Interfaces.IRepositoryService" Collapsed="true">
+    <Position X="18.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAABCAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Interfaces\IRepositoryService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ANTToDo.Core.ViewModels.IBaseViewModel" Collapsed="true">
+    <Position X="16.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ANTToDo.Core.Models.Status" Collapsed="true">
+    <Position X="16.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Status.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
