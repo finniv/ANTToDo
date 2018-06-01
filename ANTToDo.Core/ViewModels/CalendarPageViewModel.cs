@@ -47,10 +47,18 @@ namespace ANTToDo.Core.ViewModels
             set
             {
                 SetProperty(ref _tasksByDate, value);
-                ListOfTasksByDate = new MvxObservableCollection<Activities>( AllTasks
-                    .Select(item => item)
-                    .Where(i=>i.ActivitiesDate==value)
-                    .ToList());
+
+                var swap = new MvxObservableCollection<Activities>();
+                foreach (var item in AllTasks)
+                {
+                    if (item.ActivitiesDate==value)
+                    {
+                        swap.Add(item);
+                    }
+                }
+
+                ListOfTasksByDate = swap;
+                RaisePropertyChanged("ListOfTasksByDate");
             }
         }
         

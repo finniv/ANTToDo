@@ -58,7 +58,7 @@
                     android:layout_height="300dp"
                     android:id="@+id/sessionsList"
                     android:layout_marginTop="10dp"
-                    local:MvxBind="ItemsSource SessionsAtCurrentDay"
+                    local:MvxBind="ItemsSource ListOfTasksByDate"
                     local:MvxItemTemplate="@layout/calendar_of_tasks_cell"
                     android:layout_marginBottom="60dp" />
             </RelativeLayout>

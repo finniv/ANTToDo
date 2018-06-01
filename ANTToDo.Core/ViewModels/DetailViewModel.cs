@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using ANTToDo.Core.Data;
 using ANTToDo.Core.Models;
@@ -12,6 +13,8 @@ namespace ANTToDo.Core.ViewModels
 {
     public class DetailViewModel : BaseViewModel<Activities, Status>
     {
+ 
+
         private Activities _activities;
         public Activities Activities
         {
@@ -21,10 +24,11 @@ namespace ANTToDo.Core.ViewModels
 
         public DetailViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
-            DatePickerPopup = false;
-            if (_activities==null)
+            DateOfTasks = DateTime.Now;
+               DatePickerPopup = false;
+            if (Activities == null)
             {
-                _activities = new Activities
+                Activities = new Activities
                 {
                     ActivitiesDate = DateTime.Now
                 };
@@ -47,7 +51,7 @@ namespace ANTToDo.Core.ViewModels
             get { return _dateOfTask; }
             set
             {
-                _dateOfTask = _activities.ActivitiesDate;
+                _dateOfTask = value;
                 RaisePropertyChanged("DateOfTask");
             }
         }
@@ -148,6 +152,8 @@ namespace ANTToDo.Core.ViewModels
                 return new MvxCommand(async () =>
                 {
                     DatePickerPopup = false;
+                    _activities.ActivitiesDate = DateOfTasks;
+                   RaisePropertyChanged("DateOfTasks");
                 });
             }
         }
@@ -158,7 +164,7 @@ namespace ANTToDo.Core.ViewModels
             {
                 return new MvxCommand(async () =>
                 {
-                    DatePickerPopup= true;
+                    DatePickerPopup = true;
                 });
             }
         }

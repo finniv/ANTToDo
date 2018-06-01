@@ -8,6 +8,7 @@ using ANTToDo.Core;
 using ANTToDo.Core.Data;
 using ANTToDo.Core.Models;
 using ANTToDo.Droid.Converter;
+using HiitwayMobile.Droid.Converters;
 
 namespace ANTToDo.Droid
 {
@@ -28,6 +29,7 @@ namespace ANTToDo.Droid
             base.FillValueConverters(registry);
             registry.AddOrOverwrite("VisibilityValueConverter", new VisibilityValueConverter());
             registry.AddOrOverwrite("StringToByteArray", new StringToByteArrayValueConverter());
+            registry.AddOrOverwrite("DateToShortDateString", new DateToShortDateStringConverter());
         }
 
     }
